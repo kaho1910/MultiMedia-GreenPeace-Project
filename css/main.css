@@ -1,0 +1,45 @@
+.blackme {
+    background-color: black;
+}
+
+table,
+tr,
+td {
+    background: wheat;
+    border-collapse: collapse;
+    border: 0.1px solid black;
+    width: 30px;
+    height: 30px;
+}
+
+table {
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+}
+
+td {
+    padding: 12px;
+}
+
+h1,
+h2 {
+    margin: 10px;
+    display: inline;
+}
+
+td[status2="cop_walked"] {
+    background: lightblue;
+}
+
+td[status="ship_walked"] {
+    background: yellow;
+}
+
+td[status="ship"] {
+    background: red;
+}
+
+td[status2="cop"] {
+    background: blue;
+}
