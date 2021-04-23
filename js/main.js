@@ -1,11 +1,13 @@
+//SETUP
 var table_size = 30;
 var energy = 5,
     energyMax = 5,
     energyRecharge = 2000; // recharge rate in ms
 var sight = 5;
 var time = 180; // start time in s
-var mx, my, cx, cy;
+/*----------------------------------------------------------------*/
 
+var mx, my, cx, cy;
 var cop;
 var i, j;
 var col, row, tab;
@@ -94,14 +96,15 @@ function moveCop() {
             cx++;
         }
     } else {
+        //UPDATE
         //need new random pattern to avoid cop_walked
         //and when exiting a pursue
         var randX = Math.floor(Math.random() * 3) - 1;
         var randY = Math.floor(Math.random() * 3) - 1;
-        if ((cx + randX >= 0) && (cx + randX < 30)) {
+        if ((cx + randX >= 0) && (cx + randX < table_size)) {
             cx += randX;
         }
-        if ((cy + randY >= 0) && (cy + randY < 30)) {
+        if ((cy + randY >= 0) && (cy + randY < table_size)) {
             cy += randY;
         }
     }
@@ -153,8 +156,8 @@ function moveShip(e) {
         }
 
         //Vision Length
-        for (i = 0; i < 30; i++) {
-            for (j = 0; j < 30; j++) {
+        for (i = 0; i < table_size; i++) {
+            for (j = 0; j < table_size; j++) {
                 break;
                 node = document.querySelectorAll(`[x="${j}"]`)[i];
                 if (Math.abs(hist_x - j) + Math.abs(hist_y - i) > sight) {
