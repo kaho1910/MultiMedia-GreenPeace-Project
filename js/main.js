@@ -89,7 +89,7 @@ function moveCop() {
             cy--;
         }
     } else {
-        //cop randomly move
+        //cop true random move
         var c1 = 0,
             c2 = 0,
             c3 = 0,
@@ -98,7 +98,6 @@ function moveCop() {
             c6 = 0,
             c7 = 0,
             c8 = 0;
-        var skip = 0;
         while (1) {
             var randX = Math.floor(Math.random() * 3) - 1;
             var randY = Math.floor(Math.random() * 3) - 1;
@@ -127,6 +126,7 @@ function moveCop() {
                 c8 = 1;
             }
             if (c1 && c2 && c3 && c4 && c5 && c6 && c7 && c8) {
+                //cop fake random move
                 var min = Math.sqrt(1800);
                 var x, y;
                 for (i = 0; i < table_size; i++) {
@@ -192,7 +192,6 @@ document.addEventListener('keydown', keyEvent, false);
 
 function keyEvent(key) {
     var check = document.querySelector('[player="ship"]');
-    //console.log(check);
     var cx = check.getAttribute("x");
     var cy = check.getAttribute("y");
     if (key.keyCode == 87 || key.keyCode == 38) {
