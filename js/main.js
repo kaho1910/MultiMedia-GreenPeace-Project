@@ -195,21 +195,16 @@ function keyEvent(key) {
     //console.log(check);
     var cx = check.getAttribute("x");
     var cy = check.getAttribute("y");
-    if (key.keyCode == 87) {
+    if (key.keyCode == 87 || key.keyCode == 38) {
         cy--;
-        //move = document.querySelectorAll(`[x="${cx}"]`)[cy - 1];
-    } else if (key.keyCode == 83) {
+    } else if (key.keyCode == 83 || key.keyCode == 40) {
         cy++;
-        //move = document.querySelectorAll(`[x="${cx}"]`)[cy++];
-    } else if (key.keyCode == 65) {
+    } else if (key.keyCode == 65 || key.keyCode == 37) {
         cx--;
-        //move = document.querySelectorAll(`[x="${cx - 1}"]`)[cy];
-    } else if (key.keyCode == 68) {
+    } else if (key.keyCode == 68 || key.keyCode == 39) {
         cx++;
-        //move = document.querySelectorAll(`[x="${cx++}"]`)[cy];
     }
     var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
-    //console.log("--->" + move);
     moveShip(move);
 }
 
