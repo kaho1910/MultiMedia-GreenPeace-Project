@@ -3,8 +3,9 @@ var table_size = 30;
 var energy = 5,
     energyMax = 5,
     energyRecharge = 2000; // recharge rate in ms
-var sight = 5;
+var sight = 5; // vision range
 var time = 180; // start time in s
+var cop_walk = 1000; // cop walk in ms
 /*----------------------------------------------------------------*/
 
 var mx, my, cx, cy;
@@ -36,6 +37,7 @@ function drawTable() {
             col.setAttribute("onclick", "moveShip(this)")
             col.setAttribute("status", 'normal');
             col.setAttribute("status2", 'normal');
+            col.setAttribute("vision", '0');
             row.appendChild(col);
         }
     }
@@ -77,7 +79,6 @@ function moveCop() {
     cy = parseInt(cop.getAttribute("y"));
     cop.setAttribute("status2", 'cop_walked');
     if (ship.getAttribute("status2") == "cop_walked") {
-        console.log("danger");
         if (cx < mx && cy < my) {
             cx++, cy++;
         } else if (cx == mx && cy < my) {
@@ -96,20 +97,27 @@ function moveCop() {
             cx++;
         }
     } else {
-        //UPDATE
-        //need new random pattern to avoid cop_walked
-        //and when exiting a pursue
-        var randX = Math.floor(Math.random() * 3) - 1;
-        var randY = Math.floor(Math.random() * 3) - 1;
-        if ((cx + randX >= 0) && (cx + randX < table_size)) {
-            cx += randX;
-        }
-        if ((cy + randY >= 0) && (cy + randY < table_size)) {
-            cy += randY;
+        var skip = 0;
+        while (1) {
+            var randX = Math.floor(Math.random() * 3) - 1;
+            var randY = Math.floor(Math.random() * 3) - 1;
+            if ((cx + randX >= 0) && (cx + randX < table_size)) {
+                cx += randX;
+            }
+            if ((cy + randY >= 0) && (cy + randY < table_size)) {
+                cy += randY;
+            }
+            var check = document.querySelectorAll(`[x="${cx}"]`)[cy];
+            if (check.getAttribute("status2") != "cop_walked" || skip == 8) {
+                break;
+            }
+            skip++;
+            cx -= randX;
+            cy -= randY;
         }
     }
-    cop = document.querySelectorAll(`[x="${cx}"]`)[cy];
-    cop.setAttribute("status2", 'cop');
+    var cop_stat = document.querySelectorAll(`[x="${cx}"]`)[cy];
+    cop_stat.setAttribute("status2", 'cop');
 }
 
 
@@ -131,7 +139,7 @@ setInterval(function() {
     if (!(time % 1)) {
         moveCop();
     }
-}, 1000);
+}, cop_walk);
 
 
 function moveShip(e) {
@@ -155,15 +163,17 @@ function moveShip(e) {
             document.querySelector("h1").innerHTML = "Energy: " + energy;
         }
 
-        //Vision Length
+        //Vision Range
         for (i = 0; i < table_size; i++) {
             for (j = 0; j < table_size; j++) {
-                break;
+                //break;
                 node = document.querySelectorAll(`[x="${j}"]`)[i];
                 if (Math.abs(hist_x - j) + Math.abs(hist_y - i) > sight) {
-                    node.style.background = "grey";
+                    node.setAttribute("vision", '0');
+                    //node.style.background = "grey";
                 } else {
-                    node.style.background = "";
+                    node.setAttribute("vision", '1');
+                    //node.style.background = "";
                 }
             }
         }
