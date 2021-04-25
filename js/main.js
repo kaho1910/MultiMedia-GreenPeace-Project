@@ -78,22 +78,15 @@ function moveCop() {
     cop.setAttribute("bot", 'cop_walked');
     if (ship.getAttribute("bot") == "cop_walked") {
         //when step on cop_tile
-        if (cx < mx && cy < my) {
-            cx++, cy++;
-        } else if (cx == mx && cy < my) {
-            cy++;
-        } else if (cx > mx && cy < my) {
-            cx--, cy++;
-        } else if (cx > mx && cy == my) {
-            cx--;
-        } else if (cx > mx && cy > my) {
-            cx--, cy--;
-        } else if (cx == mx && cy > my) {
-            cy--;
-        } else if (cx < mx && cy > my) {
-            cx++, cy--;
-        } else if (cx < mx && cy == my) {
+        if (mx > cx) {
             cx++;
+        } else if (mx < cx) {
+            cx--;
+        }
+        if (my > cy) {
+            cy++;
+        } else if (my < cy) {
+            cy--;
         }
     } else {
         //cop randomly move
@@ -133,11 +126,34 @@ function moveCop() {
             if (randX == -1 && randY == -1) {
                 c8 = 1;
             }
+            if (c1 && c2 && c3 && c4 && c5 && c6 && c7 && c8) {
+                var min = Math.sqrt(1800);
+                var x, y;
+                for (i = 0; i < table_size; i++) {
+                    for (j = 0; j < table_size; j++) {
+                        if (min > Math.sqrt(i * i + j * j)) {
+                            min = Math.sqrt(i * i + j * j);
+                            x = j, y = i;
+                        }
+                    }
+                }
+                if (x > cx) {
+                    cx++;
+                } else if (x < cx) {
+                    cx--;
+                }
+                if (y > cy) {
+                    cy++;
+                } else if (y < cy) {
+                    cy--;
+                }
+                break;
+            }
             if ((cx + randX >= 0) && (cx + randX < table_size) && (cy + randY >= 0) && (cy + randY < table_size)) {
                 cx += randX;
                 cy += randY;
                 var check = document.querySelectorAll(`[x="${cx}"]`)[cy];
-                if (check.getAttribute("bot") != "cop_walked" || (c1 && c2 && c3 && c4 && c5 && c6 && c7 && c8)) {
+                if (check.getAttribute("bot") != "cop_walked") {
                     break;
                 }
                 cx -= randX;
