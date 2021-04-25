@@ -8,8 +8,6 @@ td {
     background: wheat;
     border-collapse: collapse;
     border: 0.1px solid black;
-    width: 30px;
-    height: 30px;
 }
 
 table {
@@ -19,6 +17,8 @@ table {
 }
 
 td {
+    display: table-cell;
+    vertical-align: inherit;
     padding: 12px;
 }
 
@@ -28,18 +28,26 @@ h2 {
     display: inline;
 }
 
-td[status2="cop_walked"] {
+td[bot="cop_walked"] {
     background: lightblue;
 }
 
-td[status="ship_walked"] {
+td[player="ship_walked"] {
     background: yellow;
 }
 
-td[status="ship"] {
+td[player="ship"] {
     background: red;
 }
 
-td[status2="cop"] {
+td[bot="cop"] {
     background: blue;
+}
+
+td[vision="1"] {
+    visibility: visible;
+}
+
+td[vision="0"] {
+    visibility: visible;
 }
