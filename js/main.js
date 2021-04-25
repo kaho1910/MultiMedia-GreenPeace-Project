@@ -2,7 +2,7 @@
 var table_size = 30;
 var energy = 5,
     energyMax = 5,
-    energyRecharge = 2000; // recharge rate in ms
+    energyRecharge = 1100; // recharge rate in ms
 var sight = 5; // vision range
 var time = 1800; // start time in s
 /*----------------------------------------------------------------*/
@@ -62,7 +62,6 @@ function spawnShip() {
 }
 
 
-//main function
 drawTable();
 var first = spawnShip();
 spawnCop();
@@ -73,7 +72,7 @@ function moveCop() {
     var mx = hist_x,
         my = hist_y;
     var ship = document.querySelectorAll(`[x="${mx}"]`)[my];
-    cop = document.querySelector(`[bot="cop"]`);
+    cop = document.querySelector('[bot="cop"]');
     cx = parseInt(cop.getAttribute("x"));
     cy = parseInt(cop.getAttribute("y"));
     cop.setAttribute("bot", 'cop_walked');
@@ -83,7 +82,7 @@ function moveCop() {
             cx++, cy++;
         } else if (cx == mx && cy < my) {
             cy++;
-        } else if (cx > mx && cy > my) {
+        } else if (cx > mx && cy < my) {
             cx--, cy++;
         } else if (cx > mx && cy == my) {
             cx--;
@@ -98,25 +97,55 @@ function moveCop() {
         }
     } else {
         //cop randomly move
+        var c1 = 0,
+            c2 = 0,
+            c3 = 0,
+            c4 = 0,
+            c5 = 0,
+            c6 = 0,
+            c7 = 0,
+            c8 = 0;
         var skip = 0;
         while (1) {
             var randX = Math.floor(Math.random() * 3) - 1;
             var randY = Math.floor(Math.random() * 3) - 1;
-            if ((cx + randX >= 0) && (cx + randX < table_size)) {
+            if (randX == 0 && randY == -1) {
+                c1 = 1;
+            }
+            if (randX == 1 && randY == -1) {
+                c2 = 1;
+            }
+            if (randX == 1 && randY == 0) {
+                c3 = 1;
+            }
+            if (randX == 1 && randY == 1) {
+                c4 = 1;
+            }
+            if (randX == 0 && randY == 1) {
+                c5 = 1;
+            }
+            if (randX == -1 && randY == 1) {
+                c6 = 1;
+            }
+            if (randX == -1 && randY == 0) {
+                c7 = 1;
+            }
+            if (randX == -1 && randY == -1) {
+                c8 = 1;
+            }
+            if ((cx + randX >= 0) && (cx + randX < table_size) && (cy + randY >= 0) && (cy + randY < table_size)) {
                 cx += randX;
-            }
-            if ((cy + randY >= 0) && (cy + randY < table_size)) {
                 cy += randY;
+                var check = document.querySelectorAll(`[x="${cx}"]`)[cy];
+                if (check.getAttribute("bot") != "cop_walked" || (c1 && c2 && c3 && c4 && c5 && c6 && c7 && c8)) {
+                    break;
+                }
+                cx -= randX;
+                cy -= randY;
             }
-            var check = document.querySelectorAll(`[x="${cx}"]`)[cy];
-            if (check.getAttribute("bot") != "cop_walked" || skip == 8) {
-                break;
-            }
-            skip++;
-            cx -= randX;
-            cy -= randY;
         }
     }
+
     var cop_stat = document.querySelectorAll(`[x="${cx}"]`)[cy];
     cop_stat.setAttribute("bot", 'cop');
 }
