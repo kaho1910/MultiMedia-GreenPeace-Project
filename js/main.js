@@ -77,7 +77,7 @@ function moveCop() {
     cy = parseInt(cop.getAttribute("y"));
     cop.setAttribute("bot", 'cop_walked');
     if (ship.getAttribute("bot") == "cop_walked") {
-        //when step on cop_tile
+        //when ship step on cop_tile
         if (mx > cx) {
             cx++;
         } else if (mx < cx) {
@@ -86,6 +86,25 @@ function moveCop() {
         if (my > cy) {
             cy++;
         } else if (my < cy) {
+            cy--;
+        }
+        var target = document.querySelector('[bot="cop_target"]');
+        if (target != null) {
+            target.setAttribute('bot', "normal");
+        }
+    } else if (document.querySelector('[bot="cop_target"]') != null) {
+        //cop fake random move with target
+        var target = document.querySelector('[bot="cop_target"]');
+        var tx = target.getAttribute("x"),
+            ty = target.getAttribute("y");
+        if (tx > cx) {
+            cx++;
+        } else if (tx < cx) {
+            cx--;
+        }
+        if (ty > cy) {
+            cy++;
+        } else if (ty < cy) {
             cy--;
         }
     } else {
@@ -128,23 +147,28 @@ function moveCop() {
             if (c1 && c2 && c3 && c4 && c5 && c6 && c7 && c8) {
                 //cop fake random move
                 var min = Math.sqrt(1800);
-                var x, y;
+                var tx, ty;
                 for (i = 0; i < table_size; i++) {
                     for (j = 0; j < table_size; j++) {
-                        if (min > Math.sqrt(i * i + j * j)) {
-                            min = Math.sqrt(i * i + j * j);
-                            x = j, y = i;
+                        var check = document.querySelectorAll(`[x="${j}"]`)[i];
+                        var n1 = Math.abs(cx - j),
+                            n2 = Math.abs(cy - i);
+                        if (min > Math.sqrt(n1 * n1 + n2 * n2) && check.getAttribute("bot") == "normal") {
+                            min = Math.sqrt(n1 * n1 + n2 * n2);
+                            tx = j, ty = i;
                         }
                     }
                 }
-                if (x > cx) {
+                var target = document.querySelectorAll(`[x="${tx}"]`)[ty];
+                target.setAttribute("bot", "cop_target");
+                if (tx > cx) {
                     cx++;
-                } else if (x < cx) {
+                } else if (tx < cx) {
                     cx--;
                 }
-                if (y > cy) {
+                if (ty > cy) {
                     cy++;
-                } else if (y < cy) {
+                } else if (ty < cy) {
                     cy--;
                 }
                 break;
