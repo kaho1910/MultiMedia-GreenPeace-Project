@@ -206,7 +206,7 @@ setInterval(function() {
         time--;
         document.querySelector("h2").innerHTML = "Time(sec): " + time;
     }
-    if (!(time % 1)) {
+    if (!(time % 1) && time > 0) {
         moveCop();
     }
 }, 1000);
