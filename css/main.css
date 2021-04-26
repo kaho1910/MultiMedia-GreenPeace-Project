@@ -33,11 +33,15 @@ td[bot="cop_walked"] {
 }
 
 td[bot="cop_target"] {
-    background: gold;
+    background: aqua;
 }
 
 td[player="ship_walked"] {
     background: darksalmon;
+}
+
+td[player="ship_walked"][bot="cop_walked"] {
+    background: plum;
 }
 
 td[player="ship"] {
