@@ -4,7 +4,8 @@ var energy = 5,
     energyMax = 5,
     energyRecharge = 1100; // recharge rate in ms
 var sight = 5; // vision range
-var time = 1800; // start time in s
+var time = 1800; // time in s
+var bonus_chance = 3; // in percentage
 /*----------------------------------------------------------------*/
 
 var mx, my, cx, cy;
@@ -34,7 +35,12 @@ function drawTable() {
             col.setAttribute("x", j);
             col.setAttribute("y", i);
             col.setAttribute("onclick", "moveShip(this)")
-            col.setAttribute("player", 'normal');
+            var num = Math.floor(Math.random() * (100 / bonus_chance));
+            if (!num) {
+                col.setAttribute("player", 'bonus');
+            } else {
+                col.setAttribute("player", 'normal');
+            }
             col.setAttribute("bot", 'normal');
             col.setAttribute("vision", '0');
             row.appendChild(col);
@@ -249,7 +255,7 @@ function moveShip(e) {
             hist_x = mx, hist_y = my;
 
             //energy fee
-            //energy--;
+            energy--;
             document.querySelector("h1").innerHTML = "Energy: " + energy;
         }
 
