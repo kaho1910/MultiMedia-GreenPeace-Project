@@ -247,16 +247,24 @@ function moveShip(e) {
         //move
         if ((Math.abs(mx - hist_x) == 1 && Math.abs(my - hist_y) == 1) || (Math.abs(mx - hist_x) == 0 && Math.abs(my - hist_y) == 1) || (Math.abs(mx - hist_x) == 1 && Math.abs(my - hist_y) == 0)) {
             var node = document.querySelectorAll(`[x="${hist_x}"]`)[hist_y];
-            //node.style.background = "yellow";
             node.setAttribute("player", 'ship_walked');
-
             node = document.querySelectorAll(`[x="${mx}"]`)[my];
+
+            //if step on Bonus Tile
+            var step_bonus = 0;
+            if (node.getAttribute("player") == "bonus") {
+                step_bonus = 1;
+            }
             node.setAttribute("player", 'ship');
             hist_x = mx, hist_y = my;
 
             //energy fee
             energy--;
             document.querySelector("h1").innerHTML = "Energy: " + energy;
+
+            if (step_bonus) {
+                alert("bonus");
+            }
         }
 
         //Vision Range
