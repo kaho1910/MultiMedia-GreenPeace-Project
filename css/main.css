@@ -44,6 +44,10 @@ td[player="ship_walked"][bot="cop_walked"] {
     background: plum;
 }
 
+td[player="bonus"] {
+    background: gold;
+}
+
 td[player="ship"] {
     background: red;
 }
