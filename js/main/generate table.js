@@ -11,7 +11,6 @@ export default function drawTable(table_size, bonus_chance) {
             col = document.createElement("td");
             col.setAttribute("x", j);
             col.setAttribute("y", i);
-            col.setAttribute("onclick", "moveShip(this)")
             var num = Math.floor(Math.random() * (100 / bonus_chance));
             if (!num) {
                 col.setAttribute("player", 'bonus');
