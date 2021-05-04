@@ -12,6 +12,7 @@ var energy = 5,
 var sight = 5; // vision range
 var time = 1800; // time in s
 var bonus_chance = 3; // in percentage
+var pause = 0;
 
 
 /*----------------------------------------------------------------*/
@@ -49,11 +50,11 @@ setInterval(function() {
 /*----------------------------------------------------------------*/
 //Timer
 setInterval(function() {
-    if (time > 0) {
+    if (time > 0 && !pause) {
         time--;
         document.querySelector("h2").innerHTML = "Time(sec): " + time;
     }
-    if (!(time % 1) && time > 0) {
+    if (!(time % 1) && time > 0 && !pause) {
         moveCop(hx, hy, table_size);
     }
 }, 1000);
@@ -64,6 +65,7 @@ setInterval(function() {
 document.addEventListener('keydown', keyEvent, false);
 
 function keyEvent(key) {
+    pause = 0;
     var check = document.querySelector('[player="ship"]');
     var cx = check.getAttribute("x");
     var cy = check.getAttribute("y");
@@ -77,8 +79,8 @@ function keyEvent(key) {
         cx++;
     }
     var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
-    var flag = moveShip(move, energy, time, sight, hx, hy, table_size);
-    hx = flag[0], hy = flag[1], energy = flag[2];
+    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, pause);
+    hx = flag[0], hy = flag[1], energy = flag[2], pause = flag[3];
 }
 
 
