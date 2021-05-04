@@ -63,3 +63,12 @@ td[vision="1"] {
 td[vision="0"] {
     visibility: visible;
 }
+
+
+/*modal*/
+
+.modal {
+    background: bisque;
+    width: 100%;
+    height: 100%;
+}
