@@ -1,7 +1,7 @@
 //Move Ship
 import game from "./minigame randomizer.js";
 var i, j;
-export default function moveShip(move, energy, time, sight, hx, hy, table_size, pause) {
+export default function moveShip(move, energy, time, sight, hx, hy, table_size, pause, reward_pool, time_reward) {
     console.log(pause);
     if (energy && time > 0 && !pause) {
         var mx = move.getAttribute("x");
@@ -21,13 +21,25 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
         hx = mx, hy = my;
 
         //energy fee
-        //energy--;
+        energy--;
         document.querySelector("h1").innerHTML = "Energy: " + energy;
 
         if (step_bonus) {
             console.log("bonus");
             pause = 1;
-            game();
+            var win = game();
+
+            //win reward
+            if (win) {
+                var rand = Math.floor(Math.random() * reward_pool);
+                if (rand == 0) {
+                    // 0 energy += 1
+                    energy += 1;
+                } else if (rand == 1) {
+                    // 1 time += 5
+                    time_reward = 1;
+                }
+            }
         }
 
         //Vision Range
@@ -45,5 +57,5 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
             }
         }
     }
-    return [hx, hy, energy, pause];
+    return [hx, hy, energy, pause, time_reward];
 }

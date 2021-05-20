@@ -12,6 +12,7 @@ var energy = 5,
 var sight = 5; // vision range
 var time = 1800; // time in s
 var bonus_chance = 3; // in percentage
+var reward_pool = 2;
 var pause = 0;
 
 
@@ -79,8 +80,13 @@ function keyEvent(key) {
         cx++;
     }
     var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
-    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, pause);
-    hx = flag[0], hy = flag[1], energy = flag[2], pause = flag[3];
+    var time_reward = 0;
+    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, pause, reward_pool, time_reward);
+    hx = flag[0], hy = flag[1], energy = flag[2], pause = flag[3], time_reward = flag[4];
+
+    if (time_reward) {
+        time += 5;
+    }
 }
 
 
