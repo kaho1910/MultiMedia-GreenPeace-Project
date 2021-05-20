@@ -5,7 +5,6 @@ export default function game() {
     var rand = Math.floor(Math.random() * num);
     if (rand == 0) {
         start_game1();
-        alert("a");
         $("#minigame1").modal({ backdrop: "static" }, "show");
     }
 }
