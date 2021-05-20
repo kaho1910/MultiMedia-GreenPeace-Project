@@ -1,9 +1,8 @@
 //Move Ship
 import game from "./minigame randomizer.js";
 var i, j;
-export default function moveShip(move, energy, time, sight, hx, hy, table_size, pause, reward_pool, time_reward) {
-    console.log(pause);
-    if (energy && time > 0 && !pause) {
+export default function moveShip(move, energy, time, sight, hx, hy, table_size, reward_pool, time_reward) {
+    if (energy && time > 0) {
         var mx = move.getAttribute("x");
         var my = move.getAttribute("y");
 
@@ -26,7 +25,6 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
 
         if (step_bonus) {
             console.log("bonus");
-            pause = 1;
             var win = game();
 
             //win reward
@@ -57,5 +55,5 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
             }
         }
     }
-    return [hx, hy, energy, pause, time_reward];
+    return [hx, hy, energy, time_reward];
 }
