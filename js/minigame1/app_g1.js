@@ -255,7 +255,10 @@ export default function start_game1() {
         //alert('before: if' + c1 + ' ' + c2 + ' ' + c3 + ' ' + c4 + ' ' + c5);
         if (c1 == 1 && c2 == 1 && c3 == 1 && c4 == 1 && c5 == 1) {
             //alert(c1 + ' ' + c2 + ' ' + c3 + ' ' + c4 + ' ' + c5);
+
+            //return
             $("#minigame1").modal('hide');
+            return true;
         }
     }, true);
 }
