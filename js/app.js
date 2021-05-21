@@ -78,25 +78,47 @@ function keyEvent(key) {
         cx++;
     }
     var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
-    var time_reward = 0;
-    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, reward_pool, time_reward);
-    hx = flag[0], hy = flag[1], energy = flag[2], time_reward = flag[3];
-
-    if (time_reward) {
-        time += 100;
-    }
+    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, reward_pool);
+    hx = flag[0], hy = flag[1], energy = flag[2];
 }
 
 
 /*----------------------------------------------------------------*/
 //Closing Minigame
-function receiveMessage(event) {
+function endMessage(event) {
     if (event.data == "removetheiframe") {
         var element = document.getElementById("minigame1");
         element.parentNode.removeChild(element);
     }
 }
-window.addEventListener("message", receiveMessage, false);
+window.addEventListener("message", endMessage, false);
+
+
+/*----------------------------------------------------------------*/
+//Reward from Minigame
+function rewardMessage(event) {
+    if (event.data == "reward=1") {
+        //reward = yes
+        console.log("reward=yes");
+
+        var rewardRandom = Math.floor(Math.random() * reward_pool);
+        console.log("rewardRandom = " + rewardRandom);
+        if (rewardRandom == 0) {
+            // 0 energy += 1
+            console.log("reward: energy");
+            energy += 10;
+        } else if (rewardRandom == 1) {
+            // 1 time += 5
+            console.log("reward: time");
+            time += 100;
+        }
+
+    } else if (event.data == "reward=0") {
+        //reward = no
+        console.log("reward=no");
+    }
+}
+window.addEventListener("message", rewardMessage, false);
 
 
 /*----------------------------------------------------------------*/

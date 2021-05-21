@@ -1,4 +1,5 @@
 import closeGame from "../main/closeMinigame.js"
+import rewardCheck from "../main/rewardMinigame.js"
 
 var c1 = 0,
     c2 = 0,
@@ -255,7 +256,9 @@ function start() {
     }
     document.addEventListener('mouseup', function() {
         if (c1 == 1 && c2 == 1 && c3 == 1 && c4 == 1 && c5 == 1) {
+            //minigame ending
             closeGame();
+            rewardCheck(true);
         }
     }, true);
 }
