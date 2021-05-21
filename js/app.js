@@ -39,25 +39,46 @@ var hx = first[0],
 
 /*----------------------------------------------------------------*/
 //Energy Recharge
-setInterval(function() {
+function energyPoint() {
     if (energy < energyMax) {
         energy++;
         document.querySelector("h1").innerHTML = "Energy: " + energy;
     }
-}, energyRecharge);
+}
+var energyPointInterval = setInterval(energyPoint, energyRecharge);
+
+
+/*----------------------------------------------------------------*/
+//Check end main game
+function endMain() {
+    var ship = document.querySelector(`[player="ship"]`);
+    var ship_x = ship.getAttribute("x");
+    var ship_y = ship.getAttribute("y");
+    var cop = document.querySelector(`[bot="cop"]`);
+    var cop_x = cop.getAttribute("x");
+    var cop_y = cop.getAttribute("y");
+    if (ship_x == cop_x && ship_y == cop_y) {
+        clearInterval(energyPointInterval);
+        clearInterval(timerInterval);
+        document.removeEventListener('keydown', keyEvent);
+        alert("END");
+    }
+}
 
 
 /*----------------------------------------------------------------*/
 //Timer
-setInterval(function() {
+function timer() {
     if (time > 0) {
         time--;
         document.querySelector("h2").innerHTML = "Time(sec): " + time;
     }
     if (!(time % 1) && time > 0) {
         moveCop(hx, hy, table_size);
+        endMain();
     }
-}, 1000);
+}
+var timerInterval = setInterval(timer, 1000);
 
 
 /*----------------------------------------------------------------*/
