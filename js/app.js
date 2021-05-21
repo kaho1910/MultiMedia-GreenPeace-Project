@@ -6,9 +6,9 @@ import moveShip from "./main/move ship.js";
 
 // SETUP
 var table_size = 30;
-var energy = 5,
-    energyMax = 5,
-    energyRecharge = 1100; // recharge rate in ms
+var energyMax = 20,
+    energy = energyMax,
+    energyRecharge = 1250; // recharge rate in ms
 var sight = 5; // vision range
 var time = 1800; // time in s
 var bonus_chance = 3; // in percentage
@@ -83,7 +83,7 @@ function keyEvent(key) {
     hx = flag[0], hy = flag[1], energy = flag[2], time_reward = flag[3];
 
     if (time_reward) {
-        time += 5;
+        time += 100;
     }
 }
 

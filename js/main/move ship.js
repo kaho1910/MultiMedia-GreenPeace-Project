@@ -30,12 +30,15 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
             //win reward
             if (win) {
                 var rand = Math.floor(Math.random() * reward_pool);
+                console.log("rand= " + rand);
                 if (rand == 0) {
                     // 0 energy += 1
                     energy += 1;
+                    console.log("reward: energy");
                 } else if (rand == 1) {
                     // 1 time += 5
                     time_reward = 1;
+                    console.log("reward: time");
                 }
             }
         }
