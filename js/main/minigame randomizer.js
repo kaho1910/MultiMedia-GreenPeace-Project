@@ -1,13 +1,14 @@
 //Minigame Randomizer
-import start_game1 from "../minigame1/app_g1.js"
 
 var num = 1; // number of game
 
 export default function game() {
     var rand = Math.floor(Math.random() * num);
     if (rand == 0) {
-        var win = start_game1();
-        $("#minigame1").modal({ backdrop: "static" }, "show");
+        var body = document.getElementById("body");
+        var run = document.createElement("iframe");
+        run.setAttribute("src", "../html/minigame1.html");
+        run.setAttribute("id", "minigame1");
+        body.appendChild(run);
     }
-    return win;
 }

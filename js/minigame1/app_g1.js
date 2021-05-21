@@ -1,3 +1,5 @@
+import closeGame from "../main/closeMinigame.js"
+
 var c1 = 0,
     c2 = 0,
     c3 = 0,
@@ -8,17 +10,17 @@ var div1,
     div3,
     div4,
     div5;
-export default function start_game1() {
+
+function start() {
     var x1, x2, x3, x4, x5, y1, y2, y3, y4, y5, w1, w2, w3, w4, w5, h1, h2, h3, h4, h5;
     c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0;
-    //alert(c1 + ' ' + c2 + ' ' + c3 + ' ' + c4 + ' ' + c5);
 
     for (var i = 1; i < 6; i++) {
-        var div = document.createElement("div");
-        div.setAttribute("class", `box box${i}`);
-        div.setAttribute("id", `box${i}`);
-        var modal = document.querySelector("#minigame1");
-        modal.appendChild(div);
+        var run = document.createElement("div");
+        run.setAttribute("class", `box box${i}`);
+        run.setAttribute("id", `box${i}`);
+        var append = document.querySelector("#minigame1");
+        append.appendChild(run);
     }
 
     div1 = document.getElementById("box1");
@@ -252,17 +254,12 @@ export default function start_game1() {
         }, true);
     }
     document.addEventListener('mouseup', function() {
-        //alert('before: if' + c1 + ' ' + c2 + ' ' + c3 + ' ' + c4 + ' ' + c5);
         if (c1 == 1 && c2 == 1 && c3 == 1 && c4 == 1 && c5 == 1) {
-            //alert(c1 + ' ' + c2 + ' ' + c3 + ' ' + c4 + ' ' + c5);
-
-            //return
-            $("#minigame1").modal('hide');
-            return true;
+            closeGame();
         }
     }, true);
 }
-
+start();
 /*
 var i, j;
 var x, y, w, h;

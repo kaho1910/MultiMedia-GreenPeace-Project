@@ -89,3 +89,14 @@ function keyEvent(key) {
 
 
 /*----------------------------------------------------------------*/
+//Closing Minigame
+function receiveMessage(event) {
+    if (event.data == "removetheiframe") {
+        var element = document.getElementById("minigame1");
+        element.parentNode.removeChild(element);
+    }
+}
+window.addEventListener("message", receiveMessage, false);
+
+
+/*----------------------------------------------------------------*/
