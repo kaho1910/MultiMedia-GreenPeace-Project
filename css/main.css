@@ -4,7 +4,12 @@
     src: url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.woff") format("woff"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.svg#PixelSplitter") format("svg");
 }
 
-* {
+p {
+    font-family: 'Mitr', sans-serif;
+}
+
+h1,
+h2 {
     font-family: "PixelSplitter", sans-serif;
 }
 
@@ -13,12 +18,57 @@ body {
     overflow: hidden;
 }
 
+ul,
+li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top: 100px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000;
+    background: #ffc;
+    display: block;
+    height: 10em;
+    width: 10em;
+    padding: 1em;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    transform: rotate(-6deg);
+}
+
+ul li:nth-child(1) a {
+    transform: rotate(-6deg);
+    position: relative;
+    top: 5px;
+    background: #cfc;
+}
+
+ul li:nth-child(2) a {
+    transform: rotate(4deg);
+    position: relative;
+    top: 5px;
+    background: #ffc;
+}
+
+ul li:nth-child(3) a {
+    transform: rotate(4deg);
+    position: relative;
+    top: 5px;
+    background: lightblue;
+}
+
 table,
 tr,
 td {
     background: wheat;
     border-collapse: collapse;
-    /*border: 0.1px solid transparent;*/
 }
 
 table {
@@ -57,18 +107,20 @@ td[player="ship_walked"][bot="cop_walked"] {
 }
 
 td[player="bonus"] {
-    background: gold;
+    background-image: url("../img/coin.gif");
+    background-size: cover;
 }
 
 td[player="ship"] {
+    background: darksalmon;
     background-image: url("../img/anchor.png");
-    background-size: 100%;
+    background-size: cover;
 }
 
 td[bot="cop"] {
     background: blue;
     background-image: url("../img/cop.gif");
-    background-size: 100%;
+    background-size: cover;
 }
 
 td[vision="1"] {
