@@ -65,7 +65,11 @@ function checkEndMain() {
         clearInterval(energyPointInterval);
         clearInterval(timerInterval);
         document.removeEventListener('keydown', keyEvent);
+
+        var count = document.querySelectorAll("[player='ship_walked']").length + 1;
+
         alert("END");
+        alert("tile(s) count : " + count);
     }
 }
 
