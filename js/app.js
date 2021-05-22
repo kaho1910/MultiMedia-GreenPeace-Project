@@ -3,6 +3,7 @@ import spawnShip from "./main/spawn ship.js";
 import spawnCop from "./main/spawn cop.js";
 import moveCop from "./main/move cop.js";
 import moveShip from "./main/move ship.js";
+import rewardArea from "./main/reward/area bomb.js"
 
 // SETUP
 var table_size = 30;
@@ -12,7 +13,7 @@ var energyMax = 30,
 var sight = 5; // vision range
 var time = 150; // time in s
 var bonus_chance = 3; // in percentage
-var reward_pool = 2;
+var reward_pool = 3;
 
 
 /*----------------------------------------------------------------*/
@@ -137,6 +138,11 @@ function rewardMessage(event) {
             console.log("reward: time");
             alert("time");
             time += 30;
+        } else if (rewardRandom == 2) {
+            // 2 area bomb
+            console.log("reward: area");
+            alert("area");
+            rewardArea(table_size);
         }
 
     } else if (event.data == "reward=0") {
