@@ -1,15 +1,30 @@
+@font-face {
+    font-family: "PixelSplitter";
+    src: url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.eot");
+    src: url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.woff") format("woff"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.svg#PixelSplitter") format("svg");
+}
+
+* {
+    font-family: "PixelSplitter", sans-serif;
+}
+
+body {
+    background-image: url("../img/island.jpg");
+}
+
 table,
 tr,
 td {
     background: wheat;
     border-collapse: collapse;
-    border: 0.1px solid black;
+    /*border: 0.1px solid transparent;*/
 }
 
 table {
     width: 900px;
     height: 900px;
     margin: 0 auto;
+    border: 7px dashed Teal;
 }
 
 td {
@@ -46,10 +61,14 @@ td[player="bonus"] {
 
 td[player="ship"] {
     background: red;
+    background-image: url("../img/anchor.png");
+    background-size: 100%;
 }
 
 td[bot="cop"] {
     background: blue;
+    background-image: url("../img/cop.gif");
+    background-size: 100%;
 }
 
 td[vision="1"] {
@@ -70,4 +89,5 @@ iframe {
     top: 0;
     left: 0;
     visibility: visible;
+    overflow: hidden;
 }
