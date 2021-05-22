@@ -61,7 +61,6 @@ td[player="bonus"] {
 }
 
 td[player="ship"] {
-    background: red;
     background-image: url("../img/anchor.png");
     background-size: 100%;
 }
