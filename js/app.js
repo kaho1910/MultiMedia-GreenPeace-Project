@@ -57,7 +57,7 @@ function endMain() {
     var cop = document.querySelector(`[bot="cop"]`);
     var cop_x = cop.getAttribute("x");
     var cop_y = cop.getAttribute("y");
-    if (ship_x == cop_x && ship_y == cop_y) {
+    if ((ship_x == cop_x && ship_y == cop_y) || (!time)) {
         clearInterval(energyPointInterval);
         clearInterval(timerInterval);
         document.removeEventListener('keydown', keyEvent);
