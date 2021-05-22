@@ -1,27 +1,28 @@
 body {
-    background: wheat;
+    background: LightBlue;
 }
 
 .box {
+    top: 150px;
     height: 600px;
     width: 950px;
-    background-color: yellow;
-    border: solid 2px black;
-    margin: auto;
+    background-color: LightSkyBlue;
+    border: dashed 7px teal;
+    margin: 0 auto;
     position: relative;
 }
 
 .greenzone1 {
     height: 60px;
     width: 60px;
-    background-color: green;
+    background-color: MediumSeaGreen;
     position: absolute;
 }
 
 .greenzone2 {
     height: 60px;
     width: 60px;
-    background-color: green;
+    background-color: MediumSeaGreen;
     position: absolute;
     right: 0%;
     top: 45%;
@@ -31,14 +32,14 @@ body {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: lightblue;
+    background-color: CadetBlue;
     position: absolute;
 }
 
 .loga {
     height: 240px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 6%;
     top: 0%;
@@ -47,7 +48,7 @@ body {
 .log {
     height: 300px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 16%;
     top: 0%;
@@ -56,7 +57,7 @@ body {
 .log1 {
     height: 300px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 6%;
     bottom: 0%;
@@ -65,7 +66,7 @@ body {
 .log2 {
     height: 262px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 16%;
     bottom: 0%;
@@ -74,7 +75,7 @@ body {
 .log3 {
     height: 400px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 26%;
     bottom: 0%;
@@ -83,7 +84,7 @@ body {
 .log4 {
     height: 160px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 26%;
     top: 0%;
@@ -92,7 +93,7 @@ body {
 .log5 {
     height: 150px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 35%;
     top: 0%;
@@ -101,7 +102,7 @@ body {
 .log6 {
     height: 410px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 35%;
     bottom: 0%;
@@ -110,7 +111,7 @@ body {
 .log7 {
     height: 260px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 45%;
     top: 0%;
@@ -119,7 +120,7 @@ body {
 .log8 {
     height: 305px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 45%;
     bottom: 0%;
@@ -128,7 +129,7 @@ body {
 .log9 {
     height: 567px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 56%;
     bottom: 0%;
@@ -137,7 +138,7 @@ body {
 .log10 {
     height: 567px;
     width: 65px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     left: 66%;
     top: 0%;
@@ -146,7 +147,7 @@ body {
 .log11 {
     height: 282px;
     width: 224px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     right: 0%;
     bottom: 0%;
@@ -155,7 +156,7 @@ body {
 .log12 {
     height: 282px;
     width: 224px;
-    background-color: red;
+    background-color: LightCoral;
     position: absolute;
     right: 0%;
     top: 0%;
