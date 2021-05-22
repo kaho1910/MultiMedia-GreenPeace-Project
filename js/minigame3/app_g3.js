@@ -7,6 +7,10 @@ keys.UP = 38;
 keys.LEFT = 37;
 keys.RIGHT = 39;
 keys.DOWN = 40;
+keys.W = 87;
+keys.A = 65;
+keys.S = 83;
+keys.D = 68;
 var item = {
     x: 20,
     y: 20,
@@ -114,19 +118,19 @@ var moveitem = function(dx, dy) {
 };
 
 var detectitemMovement = function() {
-    if (keys[keys.LEFT]) {
+    if ( keys[keys.LEFT] || keys[keys.A]) {
         moveitem(-1, 0);
-    }
-    if (keys[keys.RIGHT]) {
+      }
+    if ( keys[keys.RIGHT] || keys[keys.D]) {
         moveitem(1, 0);
-    }
-    if (keys[keys.UP]) {
+      }
+    if ( keys[keys.UP] || keys[keys.W]) {
         moveitem(0, -1);
-    }
-    if (keys[keys.DOWN]) {
+      }
+    if ( keys[keys.DOWN] || keys[keys.S]) {
         moveitem(0, 1);
-    }
-};
+      }
+    };
 
 moveitem();
 
