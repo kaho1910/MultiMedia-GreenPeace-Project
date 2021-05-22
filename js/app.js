@@ -13,7 +13,7 @@ var energyMax = 30,
 var sight = 5; // vision range
 var time = 150; // time in s
 var bonus_chance = 3; // in percentage
-var reward_pool = 3;
+var reward_pool = 4;
 
 
 /*----------------------------------------------------------------*/
@@ -147,6 +147,11 @@ function rewardMessage(event) {
             console.log("reward: area");
             alert("area");
             rewardArea(table_size);
+        } else if (rewardRandom == 3) {
+            // 3 energy max
+            console.log("reward: energy max");
+            alert("energ max");
+            energyMax += 5;
         }
 
     } else if (event.data == "reward=0") {
