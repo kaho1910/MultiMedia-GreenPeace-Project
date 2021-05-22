@@ -15,11 +15,6 @@ h2 {
     font-family: "PixelSplitter", sans-serif;
 }
 
-body {
-    background-image: url("../img/island.jpg");
-    overflow: hidden;
-}
-
 ul,
 li {
     list-style: none;
