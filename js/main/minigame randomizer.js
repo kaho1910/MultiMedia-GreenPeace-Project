@@ -1,6 +1,6 @@
 //Minigame Randomizer
 
-var num = 3; // number of minigame
+var num = 4; // number of minigame
 
 export default function miniGame() {
     var body = document.getElementById("body");

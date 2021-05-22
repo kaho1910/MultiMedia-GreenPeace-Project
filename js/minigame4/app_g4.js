@@ -1,7 +1,7 @@
 import closeGame from "../main/closeMinigame.js";
-import rewardCheck from "../main/rewardMinigame.js"
+import rewardCheck from "../main/rewardMinigame.js";
 
-$(document).ready(function () {
+$(document).ready(function() {
     var box1 = $("#box1"),
         box2 = $("#box2"),
         box3 = $("#box3"),
@@ -10,12 +10,11 @@ $(document).ready(function () {
         messageBar = $("#msg_bd"),
         kickDropDownAnimationDelay = 1500,
         shuffleSpeed = 1000,
-        nuberOfShuffels = 10,
-        z = 0;
+        nuberOfShuffels = 10;
 
     var ans = Math.floor(Math.random() * 3) + 1;
 
-    startButton.on("click", function (event) {
+    startButton.on("click", function(event) {
         event.preventDefault();
         var kickInitialPosition = 0;
         //Show the character fist
@@ -38,7 +37,7 @@ $(document).ready(function () {
             specialEasing: {
                 top: 'easeOutBounce'
             },
-            complete: function () {
+            complete: function() {
                 kick.html("<img src='https://raw.githubusercontent.com/websiddu/3cups/master/img/kick_smile.png' alt='' />");
                 kick.animate({
                     top: "370px"
@@ -47,21 +46,21 @@ $(document).ready(function () {
                     specialEasing: {
                         top: 'easeInQuint'
                     },
-                    complete: function () {
+                    complete: function() {
                         setMessage("Closing the boxes ;)")
 
                         // Close all the three boxes in a regular interval.
-                        box1.delay(500).queue(function (n) {
+                        box1.delay(500).queue(function(n) {
                             $(this).html("<img src='https://raw.githubusercontent.com/websiddu/3cups/master/img/box_c.png' alt='' />");
                             if (ans == 1) kick.hide();
                             n();
                         });
-                        box2.delay(1000).queue(function (n) {
+                        box2.delay(1000).queue(function(n) {
                             $(this).html("<img src='https://raw.githubusercontent.com/websiddu/3cups/master/img/box_c.png' alt='' />");
                             if (ans == 2) kick.hide();
                             n();
                         });
-                        box3.delay(1500).queue(function (n) {
+                        box3.delay(1500).queue(function(n) {
                             $(this).html("<img src='https://raw.githubusercontent.com/websiddu/3cups/master/img/box_c.png' alt='' />");
                             if (ans == 3) kick.hide();
 
@@ -89,12 +88,12 @@ $(document).ready(function () {
                                 left: box3_left + "px"
                             });
 
-                            shuffle = function (o) { //v1.0
+                            var shuffle = function(o) { //v1.0
                                 for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
                                 return o;
                             };
 
-                            var interval = setInterval(function () {
+                            var interval = setInterval(function() {
 
                                 setMessage("Shuffling ....");
 
@@ -124,13 +123,13 @@ $(document).ready(function () {
                             }, shuffleSpeed);
 
 
-                            setTimeout(function () {
+                            setTimeout(function() {
                                 clearInterval(interval);
                                 var flag = 0;
                                 $('div[id^="box"]').css("cursor", "pointer");
                                 setMessage("Click on the box, that you think Mr Kick is hidden >> :p")
 
-                                box1.click(function () {
+                                box1.click(function() {
                                     if (flag == 0) {
                                         $(this).html('<img src="http://websiddu.github.io/3cups/img/box_o_t.png" id="box_o_t" alt="">');
                                         $(this).append(' <img src="http://websiddu.github.io/3cups/img/box_o_b.png" id="box_o_b" alt="">');
@@ -146,7 +145,7 @@ $(document).ready(function () {
                                         }
                                     }
                                 });
-                                box2.click(function () {
+                                box2.click(function() {
                                     if (flag == 0) {
                                         $(this).html('<img src="http://websiddu.github.io/3cups/img/box_o_t.png" id="box_o_t" alt="">');
                                         $(this).append(' <img src="http://websiddu.github.io/3cups/img/box_o_b.png" id="box_o_b" alt="">');
@@ -162,7 +161,7 @@ $(document).ready(function () {
                                         }
                                     }
                                 });
-                                $("#box3").click(function () {
+                                $("#box3").click(function() {
                                     if (flag == 0) {
                                         $(this).html('<img src="http://websiddu.github.io/3cups/img/box_o_t.png" id="box_o_t" alt="">');
                                         $(this).append(' <img src="http://websiddu.github.io/3cups/img/box_o_b.png" id="box_o_b" alt="">');
@@ -178,6 +177,7 @@ $(document).ready(function () {
                                         }
                                     }
                                 });
+
                                 function slide_out() {
                                     setMessage("Congrats You won!!!! <a href=\"javascript:location.reload();\" >Play again</a>", "color_2");
                                     kick.show();
@@ -189,11 +189,14 @@ $(document).ready(function () {
                                             top: 'easeInQuint'
                                         }
                                     });
-
+                                    closeGame();
+                                    rewardCheck(true);
                                 }
 
                                 function print_error() {
                                     setMessage("LOL!!! you lost noting found.. :P :P <a href=\"javascript:location.reload();\" >try again</a>", "color_1");
+                                    closeGame();
+                                    rewardCheck(false);
                                 }
                             }, nuberOfShuffels * shuffleSpeed);
                             n();
@@ -203,7 +206,8 @@ $(document).ready(function () {
             }
         });
     });
+
     function setMessage(message, color) {
         messageBar.html(message).addClass(color);
     }
-})();
+});
