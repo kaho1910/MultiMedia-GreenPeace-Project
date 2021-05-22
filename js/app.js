@@ -50,7 +50,7 @@ var energyPointInterval = setInterval(energyPoint, energyRecharge);
 
 /*----------------------------------------------------------------*/
 //Check end main game
-function endMain() {
+function checkEndMain() {
     var ship = document.querySelector(`[player="ship"]`);
     var ship_x = ship.getAttribute("x");
     var ship_y = ship.getAttribute("y");
@@ -58,6 +58,7 @@ function endMain() {
     var cop_x = cop.getAttribute("x");
     var cop_y = cop.getAttribute("y");
     if ((ship_x == cop_x && ship_y == cop_y) || (!time)) {
+        window.postMessage("removetheiframe", "*");
         clearInterval(energyPointInterval);
         clearInterval(timerInterval);
         document.removeEventListener('keydown', keyEvent);
@@ -75,7 +76,7 @@ function timer() {
     }
     if (!(time % 1) && time > 0) {
         moveCop(hx, hy, table_size);
-        endMain();
+        checkEndMain();
     }
 }
 var timerInterval = setInterval(timer, 1000);
@@ -108,7 +109,7 @@ function keyEvent(key) {
 //Closing Minigame
 function endMessage(event) {
     if (event.data == "removetheiframe") {
-        var element = document.getElementById("minigame1");
+        var element = document.getElementById("minigame");
         element.parentNode.removeChild(element);
     }
 }
@@ -127,10 +128,12 @@ function rewardMessage(event) {
         if (rewardRandom == 0) {
             // 0 energy += 1
             console.log("reward: energy");
+            alert("energy");
             energy += 10;
         } else if (rewardRandom == 1) {
             // 1 time += 5
             console.log("reward: time");
+            alert("time");
             time += 100;
         }
 
