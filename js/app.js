@@ -6,11 +6,11 @@ import moveShip from "./main/move ship.js";
 
 // SETUP
 var table_size = 30;
-var energyMax = 20,
+var energyMax = 30,
     energy = energyMax,
     energyRecharge = 1250; // recharge rate in ms
 var sight = 5; // vision range
-var time = 1800; // time in s
+var time = 150; // time in s
 var bonus_chance = 3; // in percentage
 var reward_pool = 2;
 
@@ -18,7 +18,7 @@ var reward_pool = 2;
 /*----------------------------------------------------------------*/
 //Time and Energy Bar
 var energyBar = document.createElement("h1");
-var txt1 = document.createTextNode("Energy: " + energy);
+var txt1 = document.createTextNode("Energy: " + energy + " / " + energyMax);
 energyBar.appendChild(txt1);
 document.body.appendChild(energyBar);
 
@@ -42,7 +42,7 @@ var hx = first[0],
 function energyPoint() {
     if (energy < energyMax) {
         energy++;
-        document.querySelector("h1").innerHTML = "Energy: " + energy;
+        document.querySelector("h1").innerHTML = "Energy: " + energy + " / " + energyMax;
     }
 }
 var energyPointInterval = setInterval(energyPoint, energyRecharge);
@@ -100,7 +100,7 @@ function keyEvent(key) {
         cx++;
     }
     var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
-    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, reward_pool);
+    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, energyMax);
     hx = flag[0], hy = flag[1], energy = flag[2];
 }
 
@@ -134,7 +134,7 @@ function rewardMessage(event) {
             // 1 time += 5
             console.log("reward: time");
             alert("time");
-            time += 100;
+            time += 30;
         }
 
     } else if (event.data == "reward=0") {
