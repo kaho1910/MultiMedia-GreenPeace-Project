@@ -18,11 +18,13 @@ var reward_pool = 2;
 /*----------------------------------------------------------------*/
 //Time and Energy Bar
 var energyBar = document.createElement("h1");
+energyBar.setAttribute("id", "energyBar");
 var txt1 = document.createTextNode("Energy: " + energy + " / " + energyMax);
 energyBar.appendChild(txt1);
 document.body.appendChild(energyBar);
 
 var timeBar = document.createElement("h2");
+timeBar.setAttribute("id", "timeBar");
 var txt2 = document.createTextNode("Time(sec): " + time);
 timeBar.appendChild(txt2);
 document.body.appendChild(timeBar);
@@ -42,7 +44,7 @@ var hx = first[0],
 function energyPoint() {
     if (energy < energyMax) {
         energy++;
-        document.querySelector("h1").innerHTML = "Energy: " + energy + " / " + energyMax;
+        document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
     }
 }
 var energyPointInterval = setInterval(energyPoint, energyRecharge);
@@ -72,7 +74,7 @@ function checkEndMain() {
 function timer() {
     if (time > 0) {
         time--;
-        document.querySelector("h2").innerHTML = "Time(sec): " + time;
+        document.getElementById("timeBar").innerHTML = "Time(sec): " + time;
     }
     if (!(time % 1) && time > 0) {
         moveCop(hx, hy, table_size);

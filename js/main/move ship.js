@@ -21,7 +21,7 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
 
         //energy fee
         energy--;
-        document.querySelector("h1").innerHTML = "Energy: " + energy + " / " + energyMax;
+        document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
 
         if (step_bonus) {
             console.log("bonus");
