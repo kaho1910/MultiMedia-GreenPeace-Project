@@ -83,8 +83,8 @@ function timer() {
     }
     if (!(time % 1) && time > 0) {
         moveCop(hx, hy, table_size);
-        checkEndMain();
     }
+    checkEndMain();
 }
 var timerInterval = setInterval(timer, 1000);
 
