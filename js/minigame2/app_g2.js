@@ -96,12 +96,16 @@ function game(userChoice) {
         computerScore = 0;
         computerScore_span.innerHTML = computerScore;
         userScore_span.innerHTML = userScore;
+        closeGame();
+        rewardCheck(true);
     } else if (computerScore == 3 && userScore == 0) {
         alert("คุณแพ้แล้ว ทะเลล่มสลาย อิอิ");
         userScore = 0;
         computerScore = 0;
         computerScore_span.innerHTML = computerScore;
         userScore_span.innerHTML = userScore;
+        closeGame();
+        rewardCheck(false);
     } else {
         if (userScore == 5) {
             alert("คุณชนะแล้ว ทะเลปลอดภัย");
