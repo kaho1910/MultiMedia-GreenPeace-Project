@@ -50,31 +50,31 @@
 </body>
 <script>
     swal({
-        title: "Title ",
-        text: "Intro ",
-        button: "Click to Start ",
+        title: "Title",
+        text: "Intro",
+        button: "Click to Start",
     });
 
     function readAll(event) {
         var data = event.data;
-        if (data == "endmain ") {
+        if (data == "endmain") {
             end();
-            window.removeEventListener("message ", readAll, false);
-        } else if (data == "reward:none ") {
-            swal("You Lost : no reward lol ");
-        } else if (data == "reward:energy ") {
-            swal("energy +=1 0 ");
-        } else if (data == "reward:time ") {
+            window.removeEventListener("message", readAll, false);
+        } else if (data == "reward:none") {
+            swal("You Lost : no reward lol");
+        } else if (data == "reward:energy") {
+            swal("energy +=1 0");
+        } else if (data == "reward:time") {
             swal("time +=3 0 ");
-        } else if (data == "reward:areabomb ") {
-            swal("ยึดครองพื้นที่รอบๆตัว ");
-        } else if (data == "reward:energymax ") {
-            swal("energy limit +=5 ");
-        } else if (data == "reward:sight ") {
+        } else if (data == "reward:areabomb") {
+            swal("ยึดครองพื้นที่รอบๆตัว");
+        } else if (data == "reward:energymax") {
+            swal("energy limit +=5");
+        } else if (data == "reward:sight") {
             swal("vision range +=1 ");
         }
     }
-    window.addEventListener("message ", readAll, false);
+    window.addEventListener("message", readAll, false);
 
     function end() {
         swal("END | tile(s) : " + window.count);
