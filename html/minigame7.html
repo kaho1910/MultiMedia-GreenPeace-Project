@@ -30,20 +30,27 @@
 <script>
     let keep = [null, null, null, null, null];
     let sum = 0;
-    for (let i = 0; i < 5; i++) {
-        keep[i] = (Math.floor(Math.random() * 10)) % 2;
-        if (keep[i] == 1) {
-            let y = parseInt(i + 5);
-            document.getElementById(y).style.backgroundColor = "SandyBrown";
-            console.log('green ' + y);
-            y = 0;
-        } else if (keep[i] == 0) {
-            let y = parseInt(i + 5);
-            document.getElementById(y).style.backgroundColor = "grey";
-            console.log('red ' + y);
-            y = 0;
+    while (1) {
+        var count = 0;
+        for (let i = 0; i < 5; i++) {
+            keep[i] = (Math.floor(Math.random() * 10)) % 2;
+            if (keep[i] == 1) {
+                let y = parseInt(i + 5);
+                document.getElementById(y).style.backgroundColor = "SandyBrown";
+                console.log('green ' + y);
+                y = 0;
+                count++;
+            } else if (keep[i] == 0) {
+                let y = parseInt(i + 5);
+                document.getElementById(y).style.backgroundColor = "grey";
+                console.log('red ' + y);
+                y = 0;
+            }
+            console.log('on/off ' + keep[i]);
         }
-        console.log('on/off ' + keep[i]);
+        if (count != 5) {
+            break;
+        }
     }
 
     function turn(it) {
