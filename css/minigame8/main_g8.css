@@ -1,0 +1,30 @@
+#canvas-container {
+    width: 100%;
+    text-align: center;
+}
+
+#canvas {
+    background-image: url("../../img/bg8.jpg");
+    background-size: cover;
+    border: 1px solid red;
+    display: inline;
+    margin: 8% auto;
+}
+
+p {
+    position: absolute;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, rgba(24, 168, 210, 1) 19%, rgba(19, 210, 172, 1) 58%, rgba(133, 242, 193, 1) 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#great {
+    background: linear-gradient(90deg, rgba(210, 206, 36, 1) 9%, rgba(253, 247, 29, 1) 48%, rgba(214, 252, 69, 1) 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
