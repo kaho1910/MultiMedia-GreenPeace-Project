@@ -36,9 +36,15 @@ function funcDown() {
     }
 }
 
+document.getElementById("btn1").addEventListener("click", funcUp);
+
+document.getElementById("btn2").addEventListener("click", funcDown);
+
 function finish() {
     document.getElementsByClassName('results1')[0].style.background = "lightgreen";
     document.getElementsByClassName('results2')[0].style.background = "lightgreen";
+    document.getElementById("btn1").removeEventListener('click', funcUp);
+    document.getElementById("btn2").removeEventListener('click', funcDown);
     console.log("END");
     closeGame();
     rewardCheck(true);
