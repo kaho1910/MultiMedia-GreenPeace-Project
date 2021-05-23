@@ -123,7 +123,7 @@ td[player="ship"] {
 
 td[bot="cop"] {
     background: blue;
-    background-image: url("../img/cop.gif");
+    background-image: url("../img/cop.png");
     background-size: cover;
 }
 
