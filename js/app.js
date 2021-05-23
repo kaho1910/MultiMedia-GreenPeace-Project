@@ -13,7 +13,7 @@ var energyMax = 30,
 var sight = 5; // vision range
 var cop_sight = 5; // cop vision range
 var time = 150; // time in s
-var minigame_num = 6; // number of minigame
+var minigame_num = 7; // number of minigame
 var bonus_chance = 3; // in percentage
 var reward_pool = 4;
 
