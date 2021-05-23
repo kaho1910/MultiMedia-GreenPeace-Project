@@ -458,7 +458,7 @@ function enginestep() {
                 redAlertColor = '255,0,0';
                 redAlert = 20;
             }
-            if (health < 0) {
+            if (health <= 0) {
                 health = 0;
                 gameOver = true;
                 for (var e = 0; e < enemies.length; e++) {
