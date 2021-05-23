@@ -103,6 +103,22 @@ ul li:nth-child(4) a {
     border: 4px dashed MediumOrchid;
 }
 
+ul li:nth-child(5) a {
+    transform: rotate(-3deg);
+    position: relative;
+    top: 5px;
+    background: Plum;
+    border: 4px dashed RebeccaPurple;
+}
+
+ul li:nth-child(6) a {
+    transform: rotate(5deg);
+    position: relative;
+    top: 5px;
+    background: SandyBrown;
+    border: 4px dashed Chocolate;
+}
+
 table,
 tr,
 td {
