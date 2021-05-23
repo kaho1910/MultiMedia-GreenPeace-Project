@@ -154,3 +154,14 @@ iframe {
     visibility: visible;
     overflow: hidden;
 }
+
+
+/*swal*/
+
+.swal-text {
+    font-family: "PixelSplitter", sans-serif;
+}
+
+.swal-button {
+    font-family: "PixelSplitter", sans-serif;
+}
