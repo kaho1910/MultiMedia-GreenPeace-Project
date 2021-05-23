@@ -142,6 +142,7 @@ function rewardMessage(event) {
             console.log("reward: energy");
             alert("energy");
             energy += 10;
+            document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
         } else if (rewardRandom == 1) {
             // 1 time += 5
             console.log("reward: time");
