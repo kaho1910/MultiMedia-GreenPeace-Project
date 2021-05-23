@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://i.pinimg.com/originals/36/52/4b/36524ba103c5812a53e8c37f7ed22179.gif");
+    background-image: url("../../img/bg1.gif");
     background-repeat: no-repeat;
     background-size: 100%;
     padding: 0px;
@@ -18,37 +18,37 @@ body {
 }
 
 .box1 {
-    background-image: url("https://image.flaticon.com/icons/png/512/875/875011.png");
+    background-image: url("../../img/fish1.png");
     left: 600px;
     top: 600px;
 }
 
 .box2 {
-    background-image: url("https://image.flaticon.com/icons/png/512/874/874960.png");
+    background-image: url("../../img/fish2.png");
     left: 200px;
     top: 200px;
 }
 
 .box3 {
-    background-image: url("https://image.flaticon.com/icons/png/512/2990/2990525.png");
+    background-image: url("../../img/fish3.png");
     left: 100px;
     top: 500px;
 }
 
 .box4 {
-    background-image: url("https://image.flaticon.com/icons/png/512/3969/3969791.png");
+    background-image: url("../../img/fish4.png");
     left: 900px;
     top: 100px;
 }
 
 .box5 {
-    background-image: url("https://image.flaticon.com/icons/png/512/1134/1134431.png");
+    background-image: url("../../img/fish5.png");
     left: 1000px;
     top: 450px;
 }
 
 .bin {
-    background-image: url("https://image.flaticon.com/icons/png/512/830/830442.png");
+    background-image: url("../../img/bin.png");
     background-repeat: no-repeat;
     background-size: 100%;
     position: fixed;
