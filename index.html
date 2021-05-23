@@ -57,6 +57,8 @@
             swal("ยึดครองพื้นที่รอบๆตัว");
         } else if (data == "reward:energymax") {
             swal("energy limit += 5");
+        } else if (data == "reward:sight") {
+            swal("vision range += 1");
         }
     }
     window.addEventListener("message", readAll, false);

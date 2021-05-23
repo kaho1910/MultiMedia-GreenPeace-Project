@@ -15,7 +15,7 @@ var cop_sight = 5; // cop vision range
 var time = 150; // time in s
 var minigame_num = 7; // number of minigame
 var bonus_chance = 3; // in percentage
-var reward_pool = 4;
+var reward_pool = 5;
 window.count = 0;
 
 /*----------------------------------------------------------------*/
@@ -158,6 +158,21 @@ function rewardMessage(event) {
             window.postMessage("reward:energymax", "*");
             energyMax += 5;
             document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
+        } else if (rewardRandom == 4) {
+            // 4 sight += 1
+            console.log("reward: sight");
+            window.postMessage("reward:sight", "*");
+            sight += 1;
+            for (let i = 0; i < table_size; i++) {
+                for (let j = 0; j < table_size; j++) {
+                    var node = document.querySelectorAll(`[x="${j}"]`)[i];
+                    if (Math.abs(hx - j) + Math.abs(hy - i) > sight) {
+                        node.style.background = "Tan";
+                    } else {
+                        node.style.background = "";
+                    }
+                }
+            }
         }
 
     } else if (event.data == "reward=0") {
