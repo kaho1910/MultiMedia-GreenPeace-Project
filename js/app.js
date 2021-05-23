@@ -34,7 +34,7 @@ document.body.appendChild(timeBar);
 /*----------------------------------------------------------------*/
 //Initial
 drawTable(table_size, bonus_chance);
-var first = spawnShip();
+var first = spawnShip(table_size, sight);
 spawnCop();
 var hx = first[0],
     hy = first[1];

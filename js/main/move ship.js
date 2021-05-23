@@ -34,11 +34,11 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
                 //break;
                 node = document.querySelectorAll(`[x="${j}"]`)[i];
                 if (Math.abs(hx - j) + Math.abs(hy - i) > sight) {
-                    node.setAttribute("vision", '0');
-                    //node.style.background = "grey";
+                    //node.setAttribute("vision", '0');
+                    node.style.background = "Tan";
                 } else {
-                    node.setAttribute("vision", '1');
-                    //node.style.background = "";
+                    //node.setAttribute("vision", '1');
+                    node.style.background = "";
                 }
             }
         }
