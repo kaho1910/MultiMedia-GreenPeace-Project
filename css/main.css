@@ -158,10 +158,27 @@ iframe {
 
 /*swal*/
 
+.swal-overlay {
+    background-color: rgba(130, 130, 130, 0.6);
+}
+
+.swal-title {
+    margin: 0px;
+    font-size: 16px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+    font-family: "PixelSplitter", sans-serif;
+    margin-bottom: 28px;
+    background-color: LightSkyBlue;
+}
+
 .swal-text {
     font-family: "PixelSplitter", sans-serif;
 }
 
+
+/*.swal-footer {}*/
+
 .swal-button {
     font-family: "PixelSplitter", sans-serif;
+    background-color: DodgerBlue;
 }
