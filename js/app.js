@@ -98,21 +98,23 @@ var timerInterval = setInterval(timer, 1000);
 document.addEventListener('keydown', keyEvent, false);
 
 function keyEvent(key) {
-    var check = document.querySelector('[player="ship"]');
-    var cx = check.getAttribute("x");
-    var cy = check.getAttribute("y");
-    if (key.keyCode == 87 || key.keyCode == 38) {
-        cy--;
-    } else if (key.keyCode == 83 || key.keyCode == 40) {
-        cy++;
-    } else if (key.keyCode == 65 || key.keyCode == 37) {
-        cx--;
-    } else if (key.keyCode == 68 || key.keyCode == 39) {
-        cx++;
+    if (key.keyCode == 87 || key.keyCode == 38 || key.keyCode == 83 || key.keyCode == 40 || key.keyCode == 65 || key.keyCode == 37 || key.keyCode == 68 || key.keyCode == 39) {
+        var check = document.querySelector('[player="ship"]');
+        var cx = check.getAttribute("x");
+        var cy = check.getAttribute("y");
+        if (key.keyCode == 87 || key.keyCode == 38) {
+            cy--;
+        } else if (key.keyCode == 83 || key.keyCode == 40) {
+            cy++;
+        } else if (key.keyCode == 65 || key.keyCode == 37) {
+            cx--;
+        } else if (key.keyCode == 68 || key.keyCode == 39) {
+            cx++;
+        }
+        var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
+        var flag = moveShip(move, energy, time, sight, hx, hy, table_size, energyMax, minigame_num);
+        hx = flag[0], hy = flag[1], energy = flag[2];
     }
-    var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
-    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, energyMax, minigame_num);
-    hx = flag[0], hy = flag[1], energy = flag[2];
 }
 
 
