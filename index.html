@@ -78,7 +78,11 @@
 
     function end() {
         swal("END | tile(s) : " + window.count);
-        //redirect to Landing Page
+        window.addEventListener("click", redirect, false);
+    }
+
+    function redirect() {
+        window.location.href = "https://30x30-ocean-protection.netlify.app/";
     }
 </script>
 
