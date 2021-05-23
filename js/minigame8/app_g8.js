@@ -157,7 +157,7 @@ canvas.addEventListener(
                         great.style.display = "none";
                     }, 500);
                 }
-                if (score >= 15) {
+                if (score >= 10) {
                     closeGame();
                     rewardCheck(true);
                 }
