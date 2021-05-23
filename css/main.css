@@ -4,10 +4,6 @@
     src: url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.woff") format("woff"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.svg#PixelSplitter") format("svg");
 }
 
-a {
-    border: 4px dashed teal;
-}
-
 p {
     font-family: 'Mitr', sans-serif;
 }
@@ -52,6 +48,7 @@ ul li:nth-child(1) a {
     position: relative;
     top: 5px;
     background: #cfc;
+    border: 4px dashed SeaGreen;
 }
 
 ul li:nth-child(2) a {
@@ -59,6 +56,7 @@ ul li:nth-child(2) a {
     position: relative;
     top: 5px;
     background: #ffc;
+    border: 4px dashed SandyBrown;
 }
 
 ul li:nth-child(3) a {
@@ -66,6 +64,7 @@ ul li:nth-child(3) a {
     position: relative;
     top: 5px;
     background: lightblue;
+    border: 4px dashed DodgerBlue;
 }
 
 ul li:nth-child(4) a {
@@ -73,6 +72,7 @@ ul li:nth-child(4) a {
     position: relative;
     top: 5px;
     background: LightPink;
+    border: 4px dashed MediumOrchid;
 }
 
 table,

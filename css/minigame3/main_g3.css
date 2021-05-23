@@ -4,10 +4,6 @@ body {
     background-size: cover;
 }
 
-a {
-    border: 4px dashed teal;
-}
-
 p {
     font-family: 'Mitr', sans-serif;
 }
@@ -47,6 +43,7 @@ ul li:nth-child(1) a {
     position: relative;
     top: 5px;
     background: #cfc;
+    border: 4px dashed SeaGreen;
 }
 
 ul li:nth-child(2) a {
@@ -54,6 +51,7 @@ ul li:nth-child(2) a {
     position: relative;
     top: 5px;
     background: #ffc;
+    border: 4px dashed SandyBrown;
 }
 
 .box {
