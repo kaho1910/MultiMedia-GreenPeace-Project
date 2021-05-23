@@ -71,6 +71,9 @@ function checkEndMain() {
 
         alert("END");
         alert("tile(s) count : " + count);
+
+        cop.style.background = "url('../img/cop.gif')";
+        cop.style.backgroundSize = "cover";
     }
 }
 
@@ -116,8 +119,8 @@ function keyEvent(key) {
 /*----------------------------------------------------------------*/
 //Closing Minigame
 function endMessage(event) {
-    if (event.data == "removetheiframe") {
-        var element = document.getElementById("minigame");
+    var element = document.getElementById("minigame");
+    if (event.data == "removetheiframe" && element != null) {
         element.parentNode.removeChild(element);
     }
 }
