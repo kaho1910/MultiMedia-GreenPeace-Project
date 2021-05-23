@@ -16,7 +16,7 @@ var time = 150; // time in s
 var minigame_num = 7; // number of minigame
 var bonus_chance = 3; // in percentage
 var reward_pool = 4;
-
+window.count = 0;
 
 /*----------------------------------------------------------------*/
 //Time and Energy Bar
@@ -72,10 +72,8 @@ function checkEndMain() {
         clearInterval(timerInterval);
         document.removeEventListener('keydown', keyEvent);
 
-        var count = document.querySelectorAll("[player='ship_walked']").length + 1;
-
-        alert("END");
-        alert("tile(s) count : " + count);
+        window.count = document.querySelectorAll("[player='ship_walked']").length + 1;
+        window.postMessage("endmain", "*");
     }
 }
 
@@ -141,23 +139,23 @@ function rewardMessage(event) {
         if (rewardRandom == 0) {
             // 0 energy += 1
             console.log("reward: energy");
-            alert("energy");
+            window.postMessage("reward:energy", "*");
             energy += 10;
             document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
         } else if (rewardRandom == 1) {
-            // 1 time += 5
+            // 1 time += 30
             console.log("reward: time");
-            alert("time");
+            window.postMessage("reward:time", "*");
             time += 30;
         } else if (rewardRandom == 2) {
             // 2 area bomb
             console.log("reward: area");
-            alert("area");
+            window.postMessage("reward:areabomb", "*");
             rewardArea(table_size);
         } else if (rewardRandom == 3) {
             // 3 energy max
             console.log("reward: energy max");
-            alert("energ max");
+            window.postMessage("reward:energymax", "*");
             energyMax += 5;
             document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
         }
@@ -165,6 +163,7 @@ function rewardMessage(event) {
     } else if (event.data == "reward=0") {
         //reward = no
         console.log("reward=no");
+        window.postMessage("reward:none", "*");
     }
 }
 window.addEventListener("message", rewardMessage, false);

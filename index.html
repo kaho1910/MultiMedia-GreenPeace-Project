@@ -3,6 +3,7 @@
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <script type="module" src="js/app.js" async></script>
 </head>
@@ -41,5 +42,24 @@
         </li>
     </ul>
 </body>
+<script>
+    function readAll(event) {
+        var data = event.data;
+        if (data == "endmain") {
+            swal("END | tile(s) : " + window.count);
+        } else if (data == "reward:none") {
+            swal("You Lost : no reward lol");
+        } else if (data == "reward:energy") {
+            swal("energy += 10");
+        } else if (data == "reward:time") {
+            swal("time += 30");
+        } else if (data == "reward:areabomb") {
+            swal("ยึดครองพื้นที่รอบๆตัว");
+        } else if (data == "reward:energymax") {
+            swal("energy limit += 5");
+        }
+    }
+    window.addEventListener("message", readAll, false);
+</script>
 
 </html>
