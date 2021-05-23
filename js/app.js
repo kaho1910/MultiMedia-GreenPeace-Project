@@ -62,6 +62,10 @@ function checkEndMain() {
     var cop = document.querySelector(`[bot="cop"]`);
     var cop_x = cop.getAttribute("x");
     var cop_y = cop.getAttribute("y");
+    if (ship_x == cop_x && ship_y == cop_y) {
+        cop.style.background = "url('../img/cop.gif')";
+        cop.style.backgroundSize = "cover";
+    }
     if ((ship_x == cop_x && ship_y == cop_y) || (!time)) {
         window.postMessage("removetheiframe", "*");
         clearInterval(energyPointInterval);
@@ -72,9 +76,6 @@ function checkEndMain() {
 
         alert("END");
         alert("tile(s) count : " + count);
-
-        cop.style.background = "url('../img/cop.gif')";
-        cop.style.backgroundSize = "cover";
     }
 }
 
