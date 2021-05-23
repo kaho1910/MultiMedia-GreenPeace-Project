@@ -1,5 +1,7 @@
 body {
-    background: LightBlue;
+    background: url("../../img/bg3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a {
