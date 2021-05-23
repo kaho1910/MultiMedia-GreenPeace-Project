@@ -52,7 +52,8 @@
     function readAll(event) {
         var data = event.data;
         if (data == "endmain") {
-            swal("END | tile(s) : " + window.count);
+            end();
+            window.removeEventListener("message", readAll, false);
         } else if (data == "reward:none") {
             swal("You Lost : no reward lol");
         } else if (data == "reward:energy") {
@@ -68,6 +69,11 @@
         }
     }
     window.addEventListener("message", readAll, false);
+
+    function end() {
+        swal("END | tile(s) : " + window.count);
+        //redirect to Landing Page
+    }
 </script>
 
 </html>
