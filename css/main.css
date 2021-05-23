@@ -4,6 +4,26 @@
     src: url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.woff") format("woff"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/03d72a0482b2bc12a4f8ab59354fd4af.svg#PixelSplitter") format("svg");
 }
 
+#energyBar {
+    background: LemonChiffon;
+    border: 4px dashed Peru;
+    padding: 5px;
+    position: absolute;
+    bottom: 70%;
+    left: 75%;
+    width: 300px;
+}
+
+#timeBar {
+    background: LemonChiffon;
+    border: 4px dashed Peru;
+    padding: 5px;
+    position: absolute;
+    bottom: 64%;
+    left: 75%;
+    width: 220px;
+}
+
 p {
     font-family: 'Mitr', sans-serif;
 }
