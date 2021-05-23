@@ -42,35 +42,38 @@
             </a>
         </li>
     </ul>
-    <img src="/img/reset.png" style="position: absolute;width: 10%;height: 10%; bottom: 5%; right: 5%;cursor: pointer;" onclick="window.location.reload();">
+    <img src="./img/reset.png" style="position: absolute;width: 10%;height: 10%; bottom: 5%; right: 5%;cursor: pointer;" onclick="window.location.reload();">
+    <a href="https://30x30-ocean-protection.netlify.app/" style="position: absolute; top: 1%; right: -10%;">
+        <img src="/img/doc2.png" style="width:45%">
+    </a>
 </body>
 <script>
     swal({
-        title: "Title",
-        text: "Intro",
-        button: "Click to Start",
+        title: "Title ",
+        text: "Intro ",
+        button: "Click to Start ",
     });
 
     function readAll(event) {
         var data = event.data;
-        if (data == "endmain") {
+        if (data == "endmain ") {
             end();
-            window.removeEventListener("message", readAll, false);
-        } else if (data == "reward:none") {
-            swal("You Lost : no reward lol");
-        } else if (data == "reward:energy") {
-            swal("energy += 10");
-        } else if (data == "reward:time") {
-            swal("time += 30");
-        } else if (data == "reward:areabomb") {
-            swal("ยึดครองพื้นที่รอบๆตัว");
-        } else if (data == "reward:energymax") {
-            swal("energy limit += 5");
-        } else if (data == "reward:sight") {
-            swal("vision range += 1");
+            window.removeEventListener("message ", readAll, false);
+        } else if (data == "reward:none ") {
+            swal("You Lost : no reward lol ");
+        } else if (data == "reward:energy ") {
+            swal("energy +=1 0 ");
+        } else if (data == "reward:time ") {
+            swal("time +=3 0 ");
+        } else if (data == "reward:areabomb ") {
+            swal("ยึดครองพื้นที่รอบๆตัว ");
+        } else if (data == "reward:energymax ") {
+            swal("energy limit +=5 ");
+        } else if (data == "reward:sight ") {
+            swal("vision range +=1 ");
         }
     }
-    window.addEventListener("message", readAll, false);
+    window.addEventListener("message ", readAll, false);
 
     function end() {
         swal("END | tile(s) : " + window.count);
