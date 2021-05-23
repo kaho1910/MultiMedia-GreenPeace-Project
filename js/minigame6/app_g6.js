@@ -233,7 +233,7 @@ function enginestep() {
                     gameOver = false;
                     for (var ep = 0; ep < 10; ep++) {
                         enemies[ep] = new Enemy();
-                        health = 100;
+                        health = 20;
                         score = 0;
                         playBtn.p = 0;
                     }
@@ -295,7 +295,7 @@ function enginestep() {
                         redAlert = 30;
                         redAlertColor = '255,255,0'
                     } else {
-                        health = 100;
+                        health = 20;
                         po.des = true;
                     }
                     tdid = true;
@@ -521,6 +521,9 @@ function enginestep() {
             ctx.clearRect(canvas.width / 2 - 10, canvas.height / 2 - 40, 20, 60);
             ctx.fillText("กดเพื่อเล่น ต้องได้คะแนนมากกว่า500ขึ้นไป", canvas.width / 2, canvas.height / 2);
         }
+    } else if (score >= 500) {
+        closeGame();
+        rewardCheck(true);
     } else {
         /*
         ctx.fillStyle = 'rgba(192,0,0,1)';
