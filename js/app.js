@@ -159,6 +159,7 @@ function rewardMessage(event) {
             console.log("reward: energy max");
             alert("energ max");
             energyMax += 5;
+            document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
         }
 
     } else if (event.data == "reward=0") {
