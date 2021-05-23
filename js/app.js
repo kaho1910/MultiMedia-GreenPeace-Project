@@ -11,6 +11,7 @@ var energyMax = 30,
     energy = energyMax,
     energyRecharge = 1250; // recharge rate in ms
 var sight = 5; // vision range
+var cop_sight = 5; // cop vision range
 var time = 150; // time in s
 var bonus_chance = 3; // in percentage
 var reward_pool = 4;
@@ -82,7 +83,7 @@ function timer() {
         document.getElementById("timeBar").innerHTML = "Time(sec): " + time;
     }
     if (!(time % 1) && time > 0) {
-        moveCop(hx, hy, table_size);
+        moveCop(hx, hy, table_size, cop_sight);
     }
     checkEndMain();
 }

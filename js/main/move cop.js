@@ -1,13 +1,14 @@
 //Move Cop
 var i, j;
-export default function moveCop(hx, hy, table_size) {
+export default function moveCop(hx, hy, table_size, cop_sight) {
     var ship = document.querySelectorAll(`[x="${hx}"]`)[hy];
     var cop = document.querySelector('[bot="cop"]');
     var cx = parseInt(cop.getAttribute("x"));
     var cy = parseInt(cop.getAttribute("y"));
     cop.setAttribute("bot", 'cop_walked');
-    if (ship.getAttribute("bot") == "cop_walked") {
+    if (ship.getAttribute("bot") == "cop_walked" || (Math.abs(hx - cx) + Math.abs(hy - cy) < cop_sight)) {
         //when ship step on cop_tile
+        //or in range of cop vision
         if (hx > cx) {
             cx++;
         } else if (hx < cx) {
