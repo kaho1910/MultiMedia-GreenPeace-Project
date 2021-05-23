@@ -27,16 +27,10 @@ var mouse;
 
 var radarX = 0;
 var radarY = 0;
-var speed = 0.5;
-var c;
+var speed = 2.5;
+var c = "red";
 
 var score = 0;
-
-var gradRed = "radial-gradient(circle, rgba(136,32,3,1) 6%, rgba(162,62,17,1) 23%, rgba(254,158,107,1) 100%);";
-var gradBlue = "radial-gradient(circle, rgba(0,0,79,1) 6%, rgba(9,9,121,1) 23%, rgba(0,212,255,1) 100%);";
-var gradGreen = "radial-gradient(circle, rgba(8,159,37,1) 6%, rgba(17,162,56,1) 23%, rgba(107,254,173,1) 96%);";
-
-var grad;
 
 // start animating
 animate();
@@ -101,15 +95,15 @@ function animate() {
     // ctx.font = "30px Helvetica";
     // ctx.fillText("Score : " + score, 10, 30);
 
-    // draw the line where new objects are spawned
     ctx.beginPath();
-    ctx.moveTo(0, spawnLineY);
-    ctx.lineTo(canvas.width, spawnLineY);
-    ctx.stroke();
+    ctx.rect(radarX, radarY, canvas.width, 20);
+    ctx.fillStyle = c;
+    ctx.fill();
+    ctx.closePath();
 
+    draw();
     // move each object down the canvas
     for (var i = 0; i < objects.length; i++) {
-        draw();
 
         var object = objects[i];
 
@@ -128,7 +122,6 @@ function animate() {
     }
 }
 
-
 function oMousePos(canvas, evt) {
     var ClientRect = canvas.getBoundingClientRect();
     return {
@@ -139,6 +132,8 @@ function oMousePos(canvas, evt) {
 
 var great = document.getElementById("great");
 great.style.display = "none";
+
+console.log(canvas.offsetLeft)
 
 canvas.addEventListener(
     "mousedown",
@@ -154,7 +149,7 @@ canvas.addEventListener(
                     console.log("overlap");
                     document.getElementById("score").innerText = "Score : " + score;
                     great.style.top = mouse.y - 60;
-                    great.style.left = mouse.x - 50;
+                    great.style.left = canvas.offsetLeft + mouse.x - 55;
                     if (great.style.display === "none") {
                         great.style.display = "block";
                     }
@@ -172,19 +167,8 @@ canvas.addEventListener(
     false
 );
 
-function drawLine() {
-
-    ctx.beginPath();
-    ctx.rect(radarX, radarY, canvas.width, 20);
-    ctx.fillStyle = c;
-    ctx.fill();
-    ctx.closePath();
-
-}
 
 function draw() {
-
-    drawLine();
 
     if (radarY > canvas.height || radarY < 0) {
         speed = -speed;
@@ -196,6 +180,6 @@ function draw() {
             c = "green";
         }
     }
-
     radarY += speed;
+
 }
