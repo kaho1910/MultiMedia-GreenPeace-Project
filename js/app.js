@@ -90,12 +90,11 @@ function timer() {
     }
     checkEndMain();
 }
-var timerInterval = setInterval(timer, 1000);
+var timerInterval
 
 
 /*----------------------------------------------------------------*/
 //Key Control
-document.addEventListener('keydown', keyEvent, false);
 
 function keyEvent(key) {
     if (key.keyCode == 87 || key.keyCode == 38 || key.keyCode == 83 || key.keyCode == 40 || key.keyCode == 65 || key.keyCode == 37 || key.keyCode == 68 || key.keyCode == 39) {
@@ -115,6 +114,19 @@ function keyEvent(key) {
         var flag = moveShip(move, energy, time, sight, hx, hy, table_size, energyMax, minigame_num);
         hx = flag[0], hy = flag[1], energy = flag[2];
     }
+}
+
+
+
+/*----------------------------------------------------------------*/
+//Click to Start Game
+document.addEventListener('click', start, false);
+
+function start() {
+    document.removeEventListener('click', start, false);
+
+    document.addEventListener('keydown', keyEvent, false);
+    timerInterval = setInterval(timer, 1000);
 }
 
 
