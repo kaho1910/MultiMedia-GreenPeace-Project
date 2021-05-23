@@ -59,8 +59,12 @@
     <a href="https://30x30-ocean-protection.netlify.app/" style="position: absolute; top: 1%; right: -10%;">
         <img src="/img/doc2.png" style="width:45%">
     </a>
+    <div id="load"></div>
 </body>
 <script>
+    window.onload = function() {
+        document.getElementById("load").style.display = "none";
+    };
     swal({
         title: "Title",
         text: "Intro",
