@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body{
+             background-image: url("https://i.pinimg.com/originals/04/fc/a4/04fca40971c99476080805fd7f0a09a1.gif");
+             background-size:cover;
+             background-repeat: no-repeat;
+             overflow: hidden;
+        }
+        .box{
+            top:30%;
+            width: 730px;
+            height: 60px;
+            margin: auto;
+            position:relative;
+            }
+        .box1{
+            top:50%;
+            width: 600px;
+            height: 120px;
+            margin: auto;
+            position: relative;
+        }
+        .light{
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: grey;
+            display: inline;
+            padding: 50px;
+            margin: 20px;
+
+        }
+        .switch{
+            width: 80px;
+            height: 80px;
+            display: inline;
+            padding: 10px;
+            margin: 5px;
+
+        }
+        </style>
+    </head>
+    <body>
+    <div class="box">
+    <div class="light" id="5"></div>
+    <div class="light" id="6"></div>
+    <div class="light" id="7"></div>
+    <div class="light" id="8"></div>
+    <div class="light" id="9"></div>
+    </div>
+    <br>
+    <div class="box1">
+    <img src="https://media.discordapp.net/attachments/809013111402266654/845881576008318986/523811.png" class="switch" id="0" onclick="turn(this)"/>
+    <img src="https://media.discordapp.net/attachments/809013111402266654/845881576008318986/523811.png" class="switch" id="1" onclick="turn(this)"/>
+    <img src="https://media.discordapp.net/attachments/809013111402266654/845881576008318986/523811.png" class="switch" id="2" onclick="turn(this)"/>
+    <img src="https://media.discordapp.net/attachments/809013111402266654/845881576008318986/523811.png" class="switch" id="3" onclick="turn(this)"/>
+    <img src="https://media.discordapp.net/attachments/809013111402266654/845881576008318986/523811.png" class="switch" id="4" onclick="turn(this)"/>
+    </div>
+        <script>
+        let keep=[null,null,null,null,null];
+        let sum=0;
+        for (let i=0;i<5;i++){
+            keep[i] = (Math.floor(Math.random() * 10))%2;
+            if (keep[i] == 1){
+                let y = parseInt(i+5);
+                document.getElementById(y).style.backgroundColor="SandyBrown";
+                console.log('green '+y);
+                y = 0;
+            }
+            else if (keep[i] == 0){
+                let y = parseInt(i+5);
+                document.getElementById(y).style.backgroundColor="grey";
+                console.log('red '+y);
+                y = 0;
+            }
+            console.log('on/off '+keep[i]);
+        }
+        function turn(it){
+        var its = it.getAttribute("id");
+        if (keep[its] == 0){
+            keep[its] = 1;
+            console.log('now '+its+' '+keep[its]);
+            let k = parseInt(its)+5;
+            console.log('t-on '+k);
+            document.getElementById(k).style.backgroundColor="SandyBrown";
+            k = 0;
+        }
+        else if (keep[its] == 1){
+            keep[its] = 0;
+            console.log('now '+its+' '+keep[its]);
+            let k = parseInt(its)+5;
+            console.log('t-off '+k);
+            document.getElementById(k).style.backgroundColor="grey";
+            k = 0;
+        }
+        check();
+        }
+    function check(){
+        for (let j=0;j<5;j++){
+            sum += keep[j];
+        }
+        if (sum == 5){
+            alert("cons");
+        }
+        else{
+            sum = 0;
+        }
+    }
+        </script>
+    </body>
+</html>
