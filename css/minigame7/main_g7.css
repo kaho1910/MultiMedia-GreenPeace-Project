@@ -1,0 +1,40 @@
+body {
+    background-image: url("../../img/bg7.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.box {
+    top: 30%;
+    width: 730px;
+    height: 60px;
+    margin: auto;
+    position: relative;
+}
+
+.box1 {
+    top: 50%;
+    width: 600px;
+    height: 120px;
+    margin: auto;
+    position: relative;
+}
+
+.light {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: grey;
+    display: inline;
+    padding: 50px;
+    margin: 20px;
+}
+
+.switch {
+    width: 80px;
+    height: 80px;
+    display: inline;
+    padding: 10px;
+    margin: 5px;
+}
