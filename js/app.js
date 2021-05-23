@@ -13,6 +13,7 @@ var energyMax = 30,
 var sight = 5; // vision range
 var cop_sight = 5; // cop vision range
 var time = 150; // time in s
+var minigame_num = 5; // number of minigame
 var bonus_chance = 3; // in percentage
 var reward_pool = 4;
 
@@ -111,7 +112,7 @@ function keyEvent(key) {
         cx++;
     }
     var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
-    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, energyMax);
+    var flag = moveShip(move, energy, time, sight, hx, hy, table_size, energyMax, minigame_num);
     hx = flag[0], hy = flag[1], energy = flag[2];
 }
 

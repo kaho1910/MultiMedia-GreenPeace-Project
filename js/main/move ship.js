@@ -1,7 +1,7 @@
 //Move Ship
 import miniGame from "./minigame randomizer.js";
 var i, j;
-export default function moveShip(move, energy, time, sight, hx, hy, table_size, energyMax) {
+export default function moveShip(move, energy, time, sight, hx, hy, table_size, energyMax, minigame_num) {
     if (energy && time > 0) {
         var mx = move.getAttribute("x");
         var my = move.getAttribute("y");
@@ -25,7 +25,7 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
 
         if (step_bonus) {
             console.log("bonus");
-            miniGame();
+            miniGame(minigame_num);
         }
 
         //Vision Range

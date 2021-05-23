@@ -1,12 +1,9 @@
 //Minigame Randomizer
-
-var num = 4; // number of minigame
-
-export default function miniGame() {
+export default function miniGame(minigame_num) {
     var body = document.getElementById("body");
     var iframe = document.createElement("iframe");
     iframe.setAttribute("id", "minigame");
-    var rand = Math.floor(Math.random() * num) + 1;
+    var rand = Math.floor(Math.random() * minigame_num) + 1;
     iframe.setAttribute("src", `../html/minigame${rand}.html`);
     body.appendChild(iframe);
 }
