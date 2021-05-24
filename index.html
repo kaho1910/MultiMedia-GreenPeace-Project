@@ -15,10 +15,10 @@
     <ul>
         <li>
             <a href="#">
-                <h2>How To</h2>
-                <p style="font-size:18;">กด WASD หรือ Arrow เพื่อเดิน</p>
-                <img src="./img/wasd.png" style="position:absolute; width:110%; top:30px;left:40px;">
-                <img src="./img/arrow.png" style="position:absolute; width:55%; top:90px;left:0px;">
+                <h2 style="margin-top:5px">How To</h2>
+                <p style="font-size:18; margin-top:-5px">กด WASD หรือ Arrow เพื่อเดิน <br>(ไม่กดค้าง)</p>
+                <img src="./img/wasd.png" style="position:absolute; width:110%; top:35px;left:40px;">
+                <img src="./img/arrow.png" style="position:absolute; width:55%; top:95px;left:0px;">
             </a>
         </li>
         <li style="position: absolute;left:270px;">
@@ -75,7 +75,7 @@
     }).then(function() {
         swal({
             title: "introduction (cont.)",
-            text: "การเดินจะใช้พลังงาน\n(พลังงานสามารถชาร์จตัวเองได้ทุกๆระยะเวลาหนึ่ง)\nหรือจะหาเพิ่มจากมินิเกมในแผนที่\nมินิเกมยังมีรางวัลอื่นๆอีกรออยู่ ลองเล่นได้เลย",
+            text: "การเดินจะใช้พลังงาน\n-พลังงานสามารถชาร์จตัวเองได้ทุกๆระยะเวลาหนึ่ง-\nหรือจะหาเพิ่มจากมินิเกมในแผนที่\nมินิเกมยังมีรางวัลอื่นๆอีกรออยู่ ลองเล่นได้เลย",
             button: "Click to Start",
         }).then(function() {
             window.postMessage("main:start", "*");
