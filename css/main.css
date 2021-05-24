@@ -17,7 +17,7 @@ img:hover {
     border: 4px dashed Peru;
     padding: 5px;
     position: absolute;
-    bottom: 70%;
+    bottom: 60%;
     left: 75%;
     width: 300px;
 }
@@ -27,7 +27,7 @@ img:hover {
     border: 4px dashed Peru;
     padding: 5px;
     position: absolute;
-    bottom: 64%;
+    bottom: 54%;
     left: 75%;
     width: 220px;
 }
@@ -130,8 +130,12 @@ td {
 
 table {
     width: 40%;
+    width: 22.5%;
     margin: 0 auto;
     border: 7px dashed Teal;
+    position: relative;
+    top: -3%;
+    z-index: -20;
 }
 
 td {
