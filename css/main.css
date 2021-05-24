@@ -208,15 +208,23 @@ iframe {
 
 .swal-title {
     margin: 0px;
-    font-size: 16px;
+    font-size: 32px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
     font-family: "PixelSplitter", sans-serif;
     margin-bottom: 28px;
     background-color: LightSkyBlue;
 }
 
+.swal-modal {
+    width: 800px;
+    border-radius: 0px;
+    border: 5.5px solid LightSkyBlue;
+}
+
 .swal-text {
     font-family: "PixelSplitter", sans-serif;
+    text-align: center;
+    font-size: 30px;
 }
 
 
@@ -225,4 +233,6 @@ iframe {
 .swal-button {
     font-family: "PixelSplitter", sans-serif;
     background-color: DodgerBlue;
+    font-size: 27px;
+    border-radius: 5px;
 }
