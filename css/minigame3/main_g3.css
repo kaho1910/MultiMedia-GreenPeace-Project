@@ -63,7 +63,6 @@ ul li:nth-child(3) a {
 }
 
 .box {
-    top: 150px;
     height: 600px;
     width: 950px;
     background-color: LightSkyBlue;
