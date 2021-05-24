@@ -73,8 +73,11 @@
 
     function readAll(event) {
         var data = event.data;
-        if (data == "endmain") {
-            end();
+        if (data == "end:time") {
+            end(1);
+            window.removeEventListener("message", readAll, false);
+        } else if (data == "end:cop") {
+            end(0);
             window.removeEventListener("message", readAll, false);
         } else if (data == "reward:none") {
             swal("You Lost : no reward lol");
@@ -92,9 +95,47 @@
     }
     window.addEventListener("message", readAll, false);
 
-    function end() {
-        swal("END | tile(s) : " + window.count);
-        window.addEventListener("click", redirect, false);
+    function end(cond) {
+        if (cond) {
+            var message = "time out";
+        } else {
+            var message = "busted";
+        }
+        swal({
+            title: message,
+            button: ">",
+        }).then(function() {
+            swal({
+                title: "congratuation !",
+                text: "tile(s) secured : " + window.count,
+                button: ">",
+            }).then(function() {
+                swal({
+                    title: "END",
+                    text: "ยินดีด้วยสำหรับความสำเร็จของคุณ",
+                    button: ">",
+                }).then(function() {
+                    swal({
+                        text: "ความสําเร็จในการรุกรานผืนทะเล\nความสำเร็จในการรุกรานชีวิตใต้น้ำ\nความสำเร็จในการทำลายธรรมชาติ",
+                        button: ">",
+                    }).then(function() {
+                        swal({
+                            text: "คุณคงคิดว่าที่ผ่านมาตลอดทั้งเกม มันเป็นเรื่องสนุกที่อยู่แค่ภายในเกม ไม่ได้เกิดขึ้นจริง\nแต่ในความจริงแล้ว นี่คือสิ่งที่เกิดขึ้นจริงๆในโลกของเรา\nเรื่องเลวร้ายที่เกิดกับสิ่งมีชีวิตใต้ผืนทะเลธรรมชาติที่ถูกบุกรุกและถูกทำลายเพื่อผลประโยชน์ของมนุษย์",
+                            button: ">",
+                        }).then(function() {
+                            swal({
+                                text: "คุณอาจทำอะไรไม่ได้มากเพื่อแก้ไขเรื่องเลวร้ายนี้\nแต่คุณสามารถสนับสนุนและส่งเสริมผู้คนที่สามารถสร้างการเปลี่ยนแปลงได้\nและช่วยกันรณรงค์เพื่อสร้างวิธีคิดที่ดีเพื่อปกป้องมหาสมุทรให้คงสภาพดีต่อไป",
+                                button: "more about 30x30",
+                            }).then((value) => {
+                                if (value) {
+                                    redirect();
+                                }
+                            });
+                        });
+                    });
+                });
+            });
+        });
     }
 
     function redirect() {

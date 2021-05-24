@@ -74,7 +74,11 @@ function checkEndMain() {
 
         window.count = document.querySelectorAll("[player='ship_walked']").length + 1;
         window.percent = parseInt(window.count / 9);
-        window.postMessage("endmain", "*");
+        if (!time) {
+            window.postMessage("end:time", "*");
+        } else {
+            window.postMessage("end:cop", "*");
+        }
     }
 }
 
