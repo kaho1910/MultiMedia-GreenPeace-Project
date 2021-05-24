@@ -11,9 +11,9 @@
 </head>
 
 <body id="body">
-    <h1 style="font-size:23;">*if does not fit - try (zoom in/out)</h1>
+    <h1 style="font-size:23;">*click on note close</h1>
     <ul>
-        <li>
+        <li id="note1" onclick="del(this)">
             <a href="#">
                 <h2 style="margin-top:5px">How To</h2>
                 <p style="font-size:18; margin-top:-5px">กด WASD หรือ Arrow เพื่อเดิน <br>(ไม่กดค้าง)</p>
@@ -21,7 +21,7 @@
                 <img src="./img/arrow.png" style="position:absolute; width:55%; top:95px;left:0px;">
             </a>
         </li>
-        <li style="position: absolute;left:270px;">
+        <li style="position: absolute;left:270px;" id="note2" onclick="del(this)">
             <a href="#">
                 <h2>Your Enemy</h2>
                 <img src="./img/cop.png" style="width:20%; position: absolute; top: 30px; left: 120px;">
@@ -31,25 +31,25 @@
                 <img src="./img/anchor.png" style="width:20%; position: absolute; top: 150px; left: 90px;">
             </a>
         </li>
-        <li style="position: absolute;top: 250px;">
+        <li style="position: absolute;top: 250px;" id="note3" onclick="del(this)">
             <a href="#">
                 <h2>Objective</h2>
                 <p style="font-size:18;">เดินครอบครองพื้นที่ให้ได้มากที่สุด ก่อนจะหมดเวลา หรือโดนบุกโดยศัตรูของคุณ</p>
             </a>
         </li>
-        <li style="position: absolute;top: 250px; left:270px">
+        <li style="position: absolute;top: 250px; left:270px" id="note4" onclick="del(this)">
             <a href="#">
                 <h2>Minigame</h2>
                 <p style="font-size: 18;">มินิเกมจะให้รางวัลแก่ผู้ชนะ เช่น เวลาหรือพลังงานเพิ่ม</p>
             </a>
         </li>
-        <li style="position: absolute;top: 500px; left:270px">
+        <li style="position: absolute;top: 500px; left:270px" id="note5" onclick="del(this)">
             <a href="#">
                 <h2>Beware !!!</h2>
                 <p style="font-size: 18;">ศัตรูจะรู้ตำแหน่งคุณถ้าไปอยู่ตรงที่ศัตรูเคยเดิน หรือถ้าอยู่ใกล้จะรู้ตัว ระวังด้วยล่ะ</p>
             </a>
         </li>
-        <li style="position: absolute;top: 500px;">
+        <li style="position: absolute;top: 500px;" id="note6" onclick="del(this)">
             <a href="#">
                 <h2>WatchOut!</h2>
                 <p style="font-size: 18; margin-top: 0px">การเดินแต่ละครั้งใช้พลังงาน ถึงพลังงานจะชาร์จเองได้ แต่ก็ระวังตอนที่ศัตรูอยู่ใกล้ๆด้วยล่ะ</p>
@@ -156,6 +156,11 @@
 
     function redirect() {
         window.location.href = "https://30x30-ocean-protection.netlify.app/";
+    }
+
+    function del(me) {
+        var run = document.getElementById(me.getAttribute("id"));
+        run.style.visibility = "hidden";
     }
 </script>
 
