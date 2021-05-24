@@ -34,13 +34,17 @@ function start() {
     var offset1 = [0, 0];
     var isDown1 = false;
 
+    var bin = document.getElementById("bin").getBoundingClientRect();
+    var bin_x = bin.left;
+    var bin_y = bin.top;
+
     function overlab1() {
         var rect1 = div1.getBoundingClientRect();
         x1 = rect1.left;
         y1 = rect1.top;
         w1 = rect1.width;
         h1 = rect1.height;
-        if (x1 + w1 > 1720 && y1 + h1 > 800) {
+        if (x1 + w1 > bin_x && y1 + h1 > bin_y) {
             c1 = 1;
             div1.remove();
         }
@@ -83,7 +87,7 @@ function start() {
         y2 = rect2.top;
         w2 = rect2.width;
         h2 = rect2.height;
-        if (x2 + w2 > 1720 && y2 + h2 > 800) {
+        if (x2 + w2 > bin_x && y2 + h2 > bin_y) {
             c2 = 1;
             div2.remove();
         }
@@ -128,7 +132,7 @@ function start() {
         y3 = rect3.top;
         w3 = rect3.width;
         h3 = rect3.height;
-        if (x3 + w3 > 1720 && y3 + h3 > 800) {
+        if (x3 + w3 > bin_x && y3 + h3 > bin_y) {
             c3 = 1;
             div3.remove();
         }
@@ -174,7 +178,7 @@ function start() {
         y4 = rect4.top;
         w4 = rect4.width;
         h4 = rect4.height;
-        if (x4 + w4 > 1720 && y4 + h4 > 800) {
+        if (x4 + w4 > bin_x && y4 + h4 > bin_y) {
             c4 = 1;
             div4.remove();
         }
@@ -221,7 +225,7 @@ function start() {
         y5 = rect5.top;
         w5 = rect5.width;
         h5 = rect5.height;
-        if (x5 + w5 > 1720 && y5 + h5 > 800) {
+        if (x5 + w5 > bin_x && y5 + h5 > bin_y) {
             c5 = 1;
             div5.remove();
         }
@@ -290,7 +294,7 @@ function run(t) {
         y = rect.top;
         w = rect.width;
         h = rect.height;
-        if (x + w > 1720 && y + h > 800) {
+        if (x + w > bin_x && y + h > bin_y) {
             check[i] = 1;
             div[i].remove();
         }
