@@ -164,11 +164,11 @@ canvas.addEventListener(
                     miss++;
                     console.log("miss : " + miss)
                 }
-                if (miss >= 10) {
+                if (miss >= 5) {
                     closeGame();
                     rewardCheck(false);
                 }
-                if (score >= 10) {
+                if (score >= 5) {
                     closeGame();
                     rewardCheck(true);
                 }
