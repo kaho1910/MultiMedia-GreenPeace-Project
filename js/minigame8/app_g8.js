@@ -31,6 +31,7 @@ var speed = 2.5;
 var c = "red";
 
 var score = 0;
+var miss = 0;
 
 // start animating
 animate();
@@ -143,8 +144,10 @@ canvas.addEventListener(
             if (mouse.x <= object.x + 30 && mouse.x >= object.x - 30 &&
                 mouse.y <= object.y + 30 && mouse.y >= object.y - 30) {
                 console.log(mouse)
+                var count = 0;
                 if (radarY <= object.y + 30 && radarY >= object.y - 30 && object.type == c) {
                     score += 1;
+                    count = 1;
                     console.log(score);
                     console.log("overlap");
                     document.getElementById("score").innerText = "Score : " + score;
@@ -156,6 +159,14 @@ canvas.addEventListener(
                     setTimeout(() => {
                         great.style.display = "none";
                     }, 500);
+                }
+                if (!count) {
+                    miss++;
+                    console.log("miss : " + miss)
+                }
+                if (miss >= 10) {
+                    closeGame();
+                    rewardCheck(false);
                 }
                 if (score >= 10) {
                     closeGame();
