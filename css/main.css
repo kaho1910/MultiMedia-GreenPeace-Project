@@ -134,7 +134,7 @@ table {
     margin: 0 auto;
     border: 7px dashed Teal;
     position: relative;
-    top: -3%;
+    top: 2%;
     z-index: -20;
 }
 
