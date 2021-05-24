@@ -28,7 +28,7 @@ body {
     color: #fff;
     background-image: url("../../img/bg2.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     font-family: "Roboto", sans-serif;
 }
 
@@ -130,9 +130,9 @@ header h1 {
 .stick {
     display: block;
     position: fixed;
-    width: 600px;
-    font-size: 30px;
-    left: 220px;
+    width: 30%;
+    font-size: 18px;
+    left: 10%;
     background: DeepSkyBlue;
     border: 6px dashed RoyalBlue;
 }
@@ -140,9 +140,9 @@ header h1 {
 .stick2 {
     display: block;
     position: fixed;
-    width: 600px;
-    font-size: 30px;
-    right: 200px;
+    width: 30%;
+    font-size: 18px;
+    right: 10%;
     background: DeepSkyBlue;
     border: 6px dashed RoyalBlue;
 }
