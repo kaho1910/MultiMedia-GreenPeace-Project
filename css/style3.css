@@ -89,8 +89,8 @@ body{
     background-color: #155cd6;
 }
 .pic{
-    width: 32.75%;
-    height: 17.75%;
+    width: 35.75%;
+    height: 20.75%;
     /* background-color: rgb(255, 255, 255); */
     border-radius: 100%;
     top: 27%;
@@ -120,12 +120,12 @@ body{
     background-size: cover;
 }
 .pic2{
-    width: 40%;
-    height: 50%;
+    width: 45%;
+    height: 55%;
     /* background-color: rgb(255, 255, 255); */
     border-radius: 100%;
-    top: 35%;
-    right: -7%;
+    top: 28%;
+    right: -10%;
     position: absolute;
     transform: scale(1.02);
     background-image: url(https://imgur.com/H1Idpsk.png);
@@ -134,9 +134,9 @@ body{
 .pramong, .koodmine{
     font-family: 'Mitr', sans-serif;
     color: white;
-    font-size: 2vw;
+    font-size: 1.7vw;
     position: absolute;
-    top: 35%;
+    top: 34%;
     left: 41.5%;
     text-indent: 3.5vw;
     line-height: 200%;
@@ -149,12 +149,12 @@ body{
 .head{
     left: 45%;
     top: 29%;
-    font-size: 6.25vw;
+    font-size: 4.5vw;
     text-indent: 0;
 }
 .koodmine.head{
-    top: 35%;
-    left: 6.5%;
+    top: 36.5%;
+    left: 7.25%;
 }
 #forth{
     overflow: hidden;
