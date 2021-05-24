@@ -23,7 +23,7 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     position: absolute;
-    top: 100px;
+    top: 4%;
 }
 
 ul li a {
@@ -41,7 +41,7 @@ ul li a {
 ul li:nth-child(1) a {
     transform: rotate(-6deg);
     position: relative;
-    top: 5px;
+    top: -3%;
     background: #cfc;
     border: 4px dashed SeaGreen;
 }
@@ -49,7 +49,7 @@ ul li:nth-child(1) a {
 ul li:nth-child(2) a {
     transform: rotate(4deg);
     position: relative;
-    top: 5px;
+    top: -3%;
     background: #ffc;
     border: 4px dashed SandyBrown;
 }
@@ -57,12 +57,13 @@ ul li:nth-child(2) a {
 ul li:nth-child(3) a {
     transform: rotate(2deg);
     position: relative;
-    top: 5px;
+    top: -3%;
     background: lightblue;
     border: 4px dashed DodgerBlue;
 }
 
 .box {
+    top: 5%;
     height: 600px;
     width: 950px;
     background-color: LightSkyBlue;
