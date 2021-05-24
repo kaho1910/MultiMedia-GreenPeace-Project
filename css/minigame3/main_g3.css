@@ -71,6 +71,7 @@ ul li:nth-child(3) a {
     border: dashed 7px teal;
     margin: 0 auto;
     position: relative;
+    z-index: -10;
 }
 
 .greenzone1 {
