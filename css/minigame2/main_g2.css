@@ -142,7 +142,7 @@ header h1 {
     position: fixed;
     width: 600px;
     font-size: 30px;
-    left: 1100px;
+    right: 200px;
     background: DeepSkyBlue;
     border: 6px dashed RoyalBlue;
 }
