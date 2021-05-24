@@ -125,13 +125,16 @@ function keyEvent(key) {
 
 /*----------------------------------------------------------------*/
 //Click to Start Game
-document.addEventListener('click', start, false);
+//document.addEventListener('click', start, false);
+window.addEventListener("message", start, false);
 
-function start() {
-    document.removeEventListener('click', start, false);
+function start(event) {
+    if (event.data == "main:start") {
+        document.removeEventListener("message", start, false);
 
-    document.addEventListener('keydown', keyEvent, false);
-    timerInterval = setInterval(timer, 1000);
+        document.addEventListener('keydown', keyEvent, false);
+        timerInterval = setInterval(timer, 1000);
+    }
 }
 
 
