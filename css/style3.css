@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&family=K2D:wght@800&family=Mitr:wght@500&family=Sriracha&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    /* background-color: #ffe1b1; */
+    /* min-height: 1500px; */
+    background-color: #060534;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+#first{
+    position: relative;
+    width: 100%;
+    height: 58vw;
+    overflow: hidden;
+    background-image: linear-gradient(#074bb0 75%,#060534 75%);
+}
+#cover{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#sec{
+    position: relative;
+    width: 100%;
+    height: 130vw;
+    background-color: #060534;
+}
+#what{
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    top:5%;
+    background-image: url(https://imgur.com/l1nZ6te.png);
+    background-size: cover;
+    background-position: center ;
+}
+#why{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    background-image: url(https://imgur.com/uzs7kPG.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.cover-img{
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.title2{
+    font-size: 2vw;
+    font-family: 'Mitr', sans-serif;
+    position: absolute;
+    color: #060534;
+    top: 5%;
+    left: 14%;
+    line-height: 205%
+}
+.title2.arai{
+    font-size: 1.5vw;
+    top: 44.5%;
+    left: 29.5%;
+}
+.samsib{
+    font-size: 5vw; 
+    font-family: 'Concert One', cursive; 
+    color:#fff;
+}
+.title2.text2{
+    top: 47.5%;
+    left: 43%;
+    text-indent: 10%;
+    font-size: 1.7vw;
+}
+#third{
+    /* background-color: #113c67; */
+    width: 100%;
+    height: 170vw;
+    position: relative;
+    overflow: hidden;
+    background-size: 150% 100%;
+    background-color: #155cd6;
+}
+.pic{
+    width: 32.75%;
+    height: 17.75%;
+    /* background-color: rgb(255, 255, 255); */
+    border-radius: 100%;
+    top: 27%;
+    left: -4%;
+    position: absolute;
+    transform: scale(1.02);
+    background-image: url(https://imgur.com/uGdUgWZ.png);
+    background-size: cover;
+}
+.part2{
+    width: 100%;
+    height: 45%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(#145dd5,#377ff7);
+    /* background-image: url(https://imgur.com/xY7smNj.png); */
+    background-size: cover;
+    /* background-image: url(https://media.discordapp.net/attachments/787691312186916874/845543487621038090/image0.png?width=1191&height=670);
+    background-position: right; */
+
+}
+.part{
+    width: 100%;
+    height: 55%;
+    position: absolute;
+    background-image: url(https://imgur.com/rO5IWuq.png);
+    background-size: cover;
+}
+.pic2{
+    width: 40%;
+    height: 50%;
+    /* background-color: rgb(255, 255, 255); */
+    border-radius: 100%;
+    top: 35%;
+    right: -7%;
+    position: absolute;
+    transform: scale(1.02);
+    background-image: url(https://imgur.com/H1Idpsk.png);
+    background-size: cover;
+}
+.pramong, .koodmine{
+    font-family: 'Mitr', sans-serif;
+    color: white;
+    font-size: 2vw;
+    position: absolute;
+    top: 35%;
+    left: 41.5%;
+    text-indent: 3.5vw;
+    line-height: 200%;
+}
+.koodmine{
+    left: 3.5%;
+    top: 47%;
+    line-height: 170%;
+}
+.head{
+    left: 45%;
+    top: 29%;
+    font-size: 6.25vw;
+    text-indent: 0;
+}
+.koodmine.head{
+    top: 35%;
+    left: 6.5%;
+}
+#forth{
+    overflow: hidden;
+    position: relative;
+    background-color: #59a5e4;
+    width: 100%;
+    height: 85vw;
+    background-image: url(https://imgur.com/SUGJsev.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+.head.get{
+    left: 9.5%;
+    font-size: 5.25vw;
+    font-family: 'Mitr'; 
+    color:#ffffff;
+    position: absolute;
+    top: 23%;
+    text-shadow: 0.5vw 0.3vw 0px #12668d;
+}
+.head.start{
+    left: 16%;
+    font-size: 5.25vw;
+    font-family: 'Mitr'; 
+    color:#005c83;
+    position: absolute;
+    top: 20%;
+    text-shadow: 0vw 0.3vw 0px #50bada;
+}
+.poom{
+    background-color: rgb(52, 58, 71);
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    border-radius: 100%;
+    left: 33.5%;
+    top: 51%;
+    cursor: pointer;
+    /* z-index: 99; */
+}
+.po2{
+    left: 62.5%;
+}
+.presspic{
+    width: 27.5vw;
+    height: 27.5vw;
+    position: absolute;
+    left: 36%;
+    top: 37.5%;
+    border-radius: 100%;
+    cursor: pointer;
+    background-size: cover;
+    /* background-color: white; */
+}
+.picshadow{
+    width: 27.5vw;
+    height: 27.5vw;
+    position: absolute;
+    left: 36%;
+    top: 37.5%;
+    border-radius: 100%;
+    /* background-color: white; */
+    box-shadow: 0px 0px 3vw #0004;
+}
+i{
+    color: white;
+}
+.prakob{
+    display: none;
+}
+.picsec,.piclast{
+    opacity: 0.8;
+    width: 26vw;
+    height: 26vw;
+    top: 38%;
+}
+.picsec{
+    left: 54%;
+}
+.piclast{
+    left: 18%;
+}
+#fifth{
+    position: relative;
+    width: 100%;
+    height: 77.5vw;
+    background-color: #fff9dd;
+    overflow: hidden;
+    background-image: url(https://imgur.com/qn4NZDT.png);
+    background-size: 100% 65%;
+    background-repeat: no-repeat;
+}
+.close {
+    position: absolute;
+    top: 1.25vw;
+    right: 2.25vw;
+    color: #faf0f0;
+    /* font-size: 3vw; */
+    font-size: 3.5vw;
+    font-weight: bold;
+     transition: 0.3s;
+}
+.show1,.show2,.show3,.show4,.show5{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(5, 15, 34,0.95); 
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.data1,.data2,.data3,.data4,.data5{
+    display: none;
+    /* margin: 5em; */
+}
+.close:hover,
+    .close:focus {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        cursor: pointer;
+}
+
+.pichid{
+    left: 0%;
+    width: 47%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+}
+.tale{
+    margin: 0;
+    height: 70%;
+    position: absolute;
+    width: calc(100%/3);
+    display: inline-block;
+    padding: 0;
+    bottom: 0px;
+}
+.pictale{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 100%;
+    left: 0.75vw;
+    top: 3vw;
+    position: absolute;
+    background-size: cover;
+    transition: 1s;
+    /* cursor: pointer; */
+}
+.taletext{
+    top: 32.5vw;
+    font-size: 2.5vw;
+    left: 7vw;
+    color: #021b5f;
+}
+.taletext2{
+    top: 36vw;
+    font-size: 2vw;
+    left: 4.5vw;
+    color: #021b5f;
+}
+#load{
+    /* background-image: linear-gradient(to bottom right, #a3cbff,#25b); */
+    background-color: #000000;
+    background-image: linear-gradient(-30deg, #102736 0%, #04619f 74%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* เพิ่ม */
+
+.items {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+  }
+  
+  .items .item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+    z-index: -1;
+    opacity: 0;
+    /* background-size: cover; */
+  }
+  .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+  .item.active {
+    opacity: 1;
+    z-index: 99;
+    background-color: #fff2;
+    box-shadow: 0px 0px 3vw #00000032;
+    cursor: pointer;
+  }
+  
+  .item.prev {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(-125%, -50%);
+  }
+  
+  .item.next {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(25%, -50%);
+  }
+  
+  .items .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    z-index: 100;
+  }
+  
+  .button-container .button {
+    color: #fff;
+    /* font-size: 32px; */
+    cursor: pointer;
+    position: relative;
+    opacity: 0.75;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .button-container .button:hover {
+    opacity: 1;
+  }
+  
+  .button-container .button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4vw;
+    height: 4vw;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    z-index: -99;
+  }
+  
+  .button-container .button:nth-child(1) {
+    float: left;
+  }
+  
+  .button-container .button:nth-child(2) {
+    float: right;
+  }
+
+.loader {
+    border: 1.5vw solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 1.5vw solid #3498db;
+    width: 10vw;
+    height: 10vw;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: absolute;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .title3{
+    font-size: 1.25vw;
+    font-family: 'Mitr', sans-serif;
+    position: absolute;
+    color: #ffffff;
+    left: 51.5%;
+    top: 35%;
+    line-height: 2.5vw;
+}
+.headtitle3{
+    text-shadow: 0.14vw 0.14vw 0vw #6da8ff;
+    font-size: 2.75vw;
+    top: 26.5%;
+    left: 54%;
+}
+
+  @keyframes mynewmove {
+    from {
+        left: -5%;
+      }
+      to {
+        left: 2%;
+      }
+  }
+
+  @keyframes mynewmove2 {
+    from {
+        right: -7%;
+      }
+      to {
+        right: 0%;
+      }
+  }
+.pictale:hover{
+    opacity: 0;
+}
+#light{
+    animation: kayab 4s infinite linear;
+}
+
+
+#pra1{
+    animation: kayab2 4s infinite linear;
+}
+
+#pra2{
+    animation: kayab2 4s infinite linear;
+}
+#soh{
+    animation: kayab3 5s infinite linear;
+}
+
+@keyframes kayab{
+    50%{transform: translateY(1.75vw);}
+    100%{transform: translateY(0vw);}
+}
+
+@keyframes kayab2{
+    40%{transform: translateY(-2vw);}
+}
+@keyframes kayab3{
+    40%{transform: translateX(-1.5vw) translateY(-1.5vw);}
+}
+#sixth{
+    width: 100%;
+    height: 55vw;
+    position: relative;
+    background-color: #fff9dd;
+}
+
+#pra{
+    right: 1.5vw;
+    width: 70%;
+    position: absolute;
+    height: 70%;
+    background-size: cover;
+    top: -25%;
+    background-image: url(https://imgur.com/ZXgyHTW.png);
+    background-position: right;
+    transition: 1.5s;
+}
+.cover-img.wave{
+    bottom: -51.5%;
+}
+.textcall{
+    font-size: 5vw;
+    font-family: 'Mitr', sans-serif;
+    position: absolute;
+    color: 	#003891;
+    top: 30%;
+    left: 15%;
+    display: none;
+    opacity: 0;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear{
+    100%   { opacity: 1; }
+  }
+
+  .plan{
+    font-family: 'Mitr', sans-serif;
+    color: white;
+    font-size: 2vw;
+    position: absolute;
+    top: 8%;
+    left: 19%;
+    text-indent: 9vw;
+    line-height: 200%;
+}
+
+#bright{
+    left: 80%;
+    top: 37%;
+    width: 1vw;
+    height: 1vw;
+    opacity: 0;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+    z-index: 99;
+    position: absolute;
+    display: none;
+}
+#bleft{
+    display: none;
+    left: 10%;
+    top: 37%;
+    width: 1vw;
+    height: 1vw;
+    opacity: 0;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+    position: absolute;
+}
+button{
+    background-color: #0000;
+    outline: none;
+    border: none;
+}
+button:focus {
+    border: none;
+    outline: none;
+}
+#buttonr,#buttonl{
+    transition: 0.5s;
+    color: #001654;
+    opacity: 0.9;
+}
+#buttonr:hover,#buttonl:hover{
+    transform: scale(1.15);
+    opacity: 1;
+}
+.button3,.button4{
+    opacity: 0;
+    display: none;
+    border: 2px solid #001654;
+    padding: 10px 20px;
+    color: #001654;
+    text-decoration: none;
+    transition: 0.3s;
+    position: absolute;
+    top: 49.5%;
+    left: 32.5%;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+    border-radius: 25vw;
+  }
+  
+  .button3:hover, .button4:hover {
+    background: #001654;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .button4{
+      left: 52.5%;
+  }
