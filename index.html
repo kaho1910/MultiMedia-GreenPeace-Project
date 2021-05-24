@@ -66,10 +66,20 @@
     window.onload = function() {
         document.getElementById("load").style.display = "none";
     };
+
+    //Intro
     swal({
-        title: "Title",
-        text: "Intro",
-        button: "Click to Start",
+        title: "introduction",
+        text: "คุณได้รับบทเป็นคนคุมเรือของเจ้าของเรือสุดหน้าเงิน ที่บังคับให้คุณขับเรือไปครอบครองพื้นที่ทะเลแถบนี้ให้ได้มากที่สุด\nแต่ก็ระวังโจรสลัดแถวนี้ด้วยล่ะ\nถ้าไปตรงที่โจรสลัดเคยอยู่ก็จะรับรู้ว่าคุณอยู่ตรงไหน",
+        button: ">",
+    }).then(function() {
+        swal({
+            title: "introduction (cont.)",
+            text: "การเดินจะใช้พลังงาน\n(พลังงานสามารถชาร์จตัวเองได้ทุกๆระยะเวลาหนึ่ง)\nหรือจะหาเพิ่มจากมินิเกมในแผนที่\nมินิเกมยังมีรางวัลอื่นๆอีกรออยู่ ลองเล่นได้เลย",
+            button: "Click to Start",
+        }).then(function() {
+            window.postMessage("main:start", "*");
+        })
     });
 
     function readAll(event) {
