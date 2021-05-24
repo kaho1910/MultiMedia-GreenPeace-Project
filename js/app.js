@@ -73,6 +73,7 @@ function checkEndMain() {
         document.removeEventListener('keydown', keyEvent);
 
         window.count = document.querySelectorAll("[player='ship_walked']").length + 1;
+        window.percent = parseInt(window.count / 9);
         window.postMessage("endmain", "*");
     }
 }
