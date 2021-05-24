@@ -66,15 +66,17 @@ function checkEndMain() {
         cop.style.background = "url('../img/cop.gif')";
         cop.style.backgroundSize = "cover";
     }
-    if ((ship_x == cop_x && ship_y == cop_y) || (!time)) {
+    window.count = document.querySelectorAll("[player='ship_walked']").length + 1;
+    if ((ship_x == cop_x && ship_y == cop_y) || (!time) || (window.count == (table_size * table_size))) {
         window.postMessage("removetheiframe", "*");
         clearInterval(energyPointInterval);
         clearInterval(timerInterval);
         document.removeEventListener('keydown', keyEvent);
 
-        window.count = document.querySelectorAll("[player='ship_walked']").length + 1;
         window.percent = parseInt(window.count / 9);
-        if (!time) {
+        if (window.count == (table_size * table_size)) {
+            window.postMessage("end:win", "*");
+        } else if (!time) {
             window.postMessage("end:time", "*");
         } else {
             window.postMessage("end:cop", "*");

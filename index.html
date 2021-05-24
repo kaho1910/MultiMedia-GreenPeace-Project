@@ -84,7 +84,10 @@
 
     function readAll(event) {
         var data = event.data;
-        if (data == "end:time") {
+        if (data == "end:win") {
+            end(2);
+            window.removeEventListener("message", readAll, false);
+        } else if (data == "end:time") {
             end(1);
             window.removeEventListener("message", readAll, false);
         } else if (data == "end:cop") {
@@ -107,9 +110,11 @@
     window.addEventListener("message", readAll, false);
 
     function end(cond) {
-        if (cond) {
+        if (cond == 2) {
+            var message = "incredible";
+        } else if (cond == 1) {
             var message = "time out";
-        } else {
+        } else if (cond == 0) {
             var message = "busted";
         }
         swal({
