@@ -79,15 +79,15 @@
         } else if (data == "reward:none") {
             swal("You Lost : no reward lol");
         } else if (data == "reward:energy") {
-            swal("energy +=1 0");
+            swal("energy += 10");
         } else if (data == "reward:time") {
-            swal("time +=3 0");
+            swal("time += 30");
         } else if (data == "reward:areabomb") {
             swal("ยึดครองพื้นที่รอบๆตัว");
         } else if (data == "reward:energymax") {
-            swal("energy limit +=5");
+            swal("energy limit += 5");
         } else if (data == "reward:sight") {
-            swal("vision range +=1");
+            swal("vision range += 1");
         }
     }
     window.addEventListener("message", readAll, false);
