@@ -133,7 +133,7 @@ table {
     margin: 0 auto;
     border: 7px dashed Teal;
     position: relative;
-    top: 2%;
+    top: -4%;
     z-index: -20;
 }
 
