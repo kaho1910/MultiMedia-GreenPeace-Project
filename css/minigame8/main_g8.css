@@ -28,7 +28,8 @@ ul {
     justify-content: center;
     position: absolute;
     top: 4%;
-    left: 10%;
+    left: -2%;
+    transform: scale(0.8);
 }
 
 ul li a {
