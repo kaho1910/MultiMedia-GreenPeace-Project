@@ -136,6 +136,7 @@ function keyEvent(key) {
 window.addEventListener("message", tutorial, false);
 
 var tutorialCop, tutorialCopCont;
+var tutor3 = 1;
 
 function tutorial(event) {
     if (event.data == "tutorial:1-0") {
@@ -147,11 +148,12 @@ function tutorial(event) {
         tutorialCop = setInterval(function() {
             moveCop(hx, hy, table_size, cop_sight, sight)
         }, 1000);
-    } else if (event.data == "tutorial:3") {
+    } else if (event.data == "tutorial:3" && tutor3) {
         clearInterval(tutorialCop);
         clearInterval(energyPointInterval);
         window.postMessage("tutorial:3-1", "*");
-        energy = 3;
+        tutor3 = 0;
+        energy = 0;
         document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
     } else if (event.data == "tutorial:4-1") {
         tutorialCopCont = setInterval(function() {
