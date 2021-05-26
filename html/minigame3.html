@@ -9,7 +9,7 @@
 
 <body>
     <ul>
-        <li>
+        <li id="note1" onclick="del(this)">
             <a href="#">
                 <h2 style="margin-bottom: -20px;">วิธีเล่น</h2>
                 <p style="font-size:18;">กด WASD หรือ Arrow เพื่อเดิน</p>
@@ -17,13 +17,13 @@
                 <img src="../img/arrow.png" style="position:absolute; width:55%; top:90px;left:0px;">
             </a>
         </li>
-        <li style="position: absolute; top: 215px;">
+        <li style="position: absolute; top: 215px;" id="note2" onclick="del(this)">
             <a href="#">
                 <h2>เป้าหมาย</h2>
                 <p style="font-size:18;">ไปให้ถึงพื้นที่สีเขียวอีกฝั่งหนึ่ง แบบไม่โดนสิ่งกีดขวาง</p>
             </a>
         </li>
-        <li style="position: absolute; top: 430px;">
+        <li style="position: absolute; top: 430px;" id="note3" onclick="del(this)">
             <a href="#">
                 <h2 style="font-size:18;">กดในช่องเพื่อเล่น</h2>
             </a>
@@ -48,8 +48,12 @@
         <div class="greenzone2"></div>
         <div class="item" id="item"></div>
     </div>
-    <script>
-    </script>
 </body>
+<script>
+    function del(me) {
+        var run = document.getElementById(me.getAttribute("id"));
+        run.style.visibility = "hidden";
+    }
+</script>
 
 </html>
