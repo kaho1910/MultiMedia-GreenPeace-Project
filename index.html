@@ -57,7 +57,7 @@
         </li>
     </ul>
     <img src="./img/reset.png" style="position: absolute;width: 10%; bottom: 5%; right: 5%;cursor: pointer;" onclick="window.location.reload();">
-    <a href="landing.html" style="position: absolute; top: 1%; right: -5%;">
+    <a href="html/landing.html" style="position: absolute; top: 1%; right: -5%;">
         <img src="/img/doc2.png" style="width:45%">
     </a>
     <div id="load"></div>
@@ -81,7 +81,7 @@
             if (value) {
                 window.postMessage("main:start", "*");
             } else {
-                window.location.href = "tutorial.html";
+                window.location.href = "html/tutorial.html";
             }
         })
     });
@@ -159,7 +159,7 @@
     }
 
     function redirect() {
-        window.location.href = "landing.html";
+        window.location.href = "html/landing.html";
     }
 
     function del(me) {

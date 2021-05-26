@@ -2,12 +2,12 @@
 
 <head>
     <title>Tutorial</title>
-    <link rel="icon" href="./img/icon.png" type="image/x-icon">
+    <link rel="icon" href="../img/icon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <script type="module" src="js/app.js" async></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="module" src="../js/app.js" async></script>
 </head>
 
 <body id="body">
@@ -17,18 +17,18 @@
             <a href="#">
                 <h2 style="margin-top:5px">How To</h2>
                 <p style="font-size:18; margin-top:-5px">กด WASD หรือ Arrow เพื่อเดิน <br>(ไม่กดค้าง)</p>
-                <img src="./img/wasd.png" style="position:absolute; width:110%; top:35px;left:40px;">
-                <img src="./img/arrow.png" style="position:absolute; width:55%; top:95px;left:0px;">
+                <img src="../img/wasd.png" style="position:absolute; width:110%; top:35px;left:40px;">
+                <img src="../img/arrow.png" style="position:absolute; width:55%; top:95px;left:0px;">
             </a>
         </li>
         <li style="position: absolute;left:270px;" id="note2" onclick="del(this)">
             <a href="#">
                 <h2>Your Enemy</h2>
-                <img src="./img/cop.png" style="width:20%; position: absolute; top: 30px; left: 120px;">
+                <img src="../img/cop.png" style="width:20%; position: absolute; top: 30px; left: 120px;">
                 <h2 style="font-size: 21px;"><br><br>Minigame</h2>
-                <img src="./img/coin.gif" style="width:20%; position: absolute; top:95px">
+                <img src="../img/coin.gif" style="width:20%; position: absolute; top:95px">
                 <h2><br><br>You</h2>
-                <img src="./img/anchor.png" style="width:20%; position: absolute; top: 150px; left: 90px;">
+                <img src="../img/anchor.png" style="width:20%; position: absolute; top: 150px; left: 90px;">
             </a>
         </li>
         <li style="position: absolute;top: 250px;" id="note3" onclick="del(this)">
@@ -56,10 +56,6 @@
             </a>
         </li>
     </ul>
-    <!--<img src="./img/reset.png" style="position: absolute;width: 10%; bottom: 5%; right: 5%;cursor: pointer;" onclick="window.location.reload();">
-    <a href="landing.html" style="position: absolute; top: 1%; right: -5%;">
-        <img src="/img/doc2.png" style="width:45%">
-    </a>-->
     <div id="load"></div>
 </body>
 <script>
@@ -121,7 +117,7 @@
                 button: "finish",
             }).then(function() {
                 //window.postMessage("backmain", "*");
-                window.location.href = "index.html";
+                window.location.href = "../index.html";
             });
         }
     }
