@@ -6,7 +6,7 @@ export default function moveCop(hx, hy, table_size, cop_sight, sight) {
     var cx = parseInt(cop.getAttribute("x"));
     var cy = parseInt(cop.getAttribute("y"));
     cop.setAttribute("bot", 'cop_walked');
-    if (Math.abs(hx - cx) + Math.abs(hy - cy) <= sight && !cop_check) {
+    if ((Math.abs(hx - cx) + Math.abs(hy - cy) <= sight) && !(cop_check)) {
         cop_check = 1;
         window.postMessage("tutorial:3", "*");
     }

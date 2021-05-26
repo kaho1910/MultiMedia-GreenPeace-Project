@@ -135,21 +135,15 @@ function keyEvent(key) {
 //Tutorial
 window.addEventListener("message", tutorial, false);
 
-var tutorialCop
+var tutorialCop, tutorialCopCont;
 
 function tutorial(event) {
-    var ship = document.querySelector(`[player="ship"]`);
-    var ship_x = ship.getAttribute("x");
-    var ship_y = ship.getAttribute("y");
-    var cop = document.querySelector(`[bot="cop"]`);
-    var cop_x = cop.getAttribute("x");
-    var cop_y = cop.getAttribute("y");
     if (event.data == "tutorial:1-0") {
         document.addEventListener('keydown', keyEvent, false);
     } else if (event.data == "tutorial:1-check") {
         window.postMessage("tutorial:2", "*");
     } else if (event.data == "tutorial:2-check") {
-        cop_sight = 40;
+        cop_sight = 60;
         tutorialCop = setInterval(function() {
             moveCop(hx, hy, table_size, cop_sight, sight)
         }, 1000);
@@ -160,12 +154,23 @@ function tutorial(event) {
         energy = 3;
         document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
     } else if (event.data == "tutorial:4-1") {
-        tutorialCop = setInterval(function() {
+        tutorialCopCont = setInterval(function() {
             moveCop(hx, hy, table_size, cop_sight, sight)
         }, 1000);
-    } else if (ship_x == cop_x && ship_y == cop_y) {
+    }
+    var ship = document.querySelector(`[player="ship"]`);
+    var ship_x = ship.getAttribute("x");
+    var ship_y = ship.getAttribute("y");
+    alert(ship_x + " : " + ship_y);
+    var cop = document.querySelector(`[bot="cop"]`);
+    var cop_x = cop.getAttribute("x");
+    var cop_y = cop.getAttribute("y");
+    alert(cop_x + " : " + cop_y);
+    console.log(ship_x == cop_x && ship_y == cop_y);
+    if (document.querySelector("[player='ship']").getAttribute("bot") == "cop") {
+        alert("check ship+cop");
         document.removeEventListener('keydown', keyEvent);
-        clearInterval(tutorialCop);
+        clearInterval(tutorialCopCont);
         window.postMessage("tutorial:end", "*");
     } else if (event.data == "backmain") {
         window.removeEventListener("message", tutorial, false);
