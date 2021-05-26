@@ -292,7 +292,7 @@ iframe {
     display: none;
 }
 
-.swal-button--cancel {
+.swal-button--break {
     color: white;
 }
 
@@ -312,6 +312,6 @@ iframe {
     background: MediumSeaGreen;
 }
 
-.swal-button--cancel:not([disabled]):hover {
+.swal-button--break:not([disabled]):hover {
     background: GoldenRod;
 }

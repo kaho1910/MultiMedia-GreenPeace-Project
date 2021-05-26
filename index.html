@@ -76,14 +76,22 @@
         swal({
             title: "introduction (cont.)",
             text: "การเดินจะใช้พลังงาน\n-พลังงานสามารถชาร์จตัวเองได้ทุกๆระยะเวลาหนึ่ง-\nหรือจะหาเพิ่มจากมินิเกมในแผนที่\nมินิเกมยังมีรางวัลอื่นๆ รออยู่อีก",
-            buttons: ["tutorial", "Click to Start"],
-        }).then(function(value) {
-            if (value) {
-                window.postMessage("main:start", "*");
-            } else {
-                window.location.href = "html/tutorial.html";
+            buttons: {
+                break: "tutorial",
+                default: "click to start",
+            },
+        }).then((value) => {
+            switch (value) {
+                case "default":
+                    window.postMessage("main:start", "*");
+                    break;
+                case "break":
+                    window.location.href = "html/tutorial.html";
+                    break;
+                default:
+                    window.postMessage("main:start", "*");
             }
-        })
+        });
     });
 
     function readAll(event) {
