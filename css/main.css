@@ -131,9 +131,9 @@ td {
 table {
     width: 22.5%;
     margin: 0 auto;
-    border: 7px dashed Teal;
+    border: 5px dashed Teal;
     position: relative;
-    top: -2%;
+    top: -3%;
     z-index: -20;
 }
 
