@@ -20,18 +20,22 @@ window.count = 0;
 
 /*----------------------------------------------------------------*/
 //Time and Energy Bar
-var energyBar = document.createElement("h1");
-energyBar.setAttribute("id", "energyBar");
-var txt1 = document.createTextNode("Energy: " + energy + " / " + energyMax);
-energyBar.appendChild(txt1);
-document.body.appendChild(energyBar);
+function energyInit() {
+    var energyBar = document.createElement("h1");
+    energyBar.setAttribute("id", "energyBar");
+    var txt1 = document.createTextNode("Energy: " + energy + " / " + energyMax);
+    energyBar.appendChild(txt1);
+    document.body.appendChild(energyBar);
+}
 
-var timeBar = document.createElement("h2");
-timeBar.setAttribute("id", "timeBar");
-var txt2 = document.createTextNode("Time(sec): " + time);
-timeBar.appendChild(txt2);
-document.body.appendChild(timeBar);
-
+function timeInit() {
+    var timeBar = document.createElement("h2");
+    timeBar.setAttribute("id", "timeBar");
+    var txt2 = document.createTextNode("Time(sec): " + time);
+    timeBar.appendChild(txt2);
+    document.body.appendChild(timeBar);
+}
+energyInit()
 
 /*----------------------------------------------------------------*/
 //Initial
@@ -134,6 +138,7 @@ function start(event) {
     if (event.data == "main:start") {
         document.removeEventListener("message", start, false);
 
+        timeInit() //insert timebar
         document.addEventListener('keydown', keyEvent, false);
         timerInterval = setInterval(timer, 1000);
     }
