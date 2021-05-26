@@ -296,6 +296,18 @@ iframe {
     color: white;
 }
 
+.swal-icon--error {
+    background-image: url("../img/cop.png");
+    background-size: cover;
+    background-color: white;
+    border: none;
+    border-radius: 0%;
+}
+
+.swal-icon--error__x-mark {
+    display: none;
+}
+
 .swal-button:not([disabled]):hover {
     background: MediumSeaGreen;
 }
