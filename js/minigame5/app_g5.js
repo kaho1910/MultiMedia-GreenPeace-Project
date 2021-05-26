@@ -36,15 +36,15 @@ function funcDown() {
     }
 }
 
-document.getElementById("btn1").addEventListener("click", funcUp);
+document.getElementById("btn1").addEventListener("click", funcDown);
 
-document.getElementById("btn2").addEventListener("click", funcDown);
+document.getElementById("btn2").addEventListener("click", funcUp);
 
 function finish() {
     document.getElementsByClassName('results1')[0].style.background = "lightgreen";
     document.getElementsByClassName('results2')[0].style.background = "lightgreen";
-    document.getElementById("btn1").removeEventListener('click', funcUp);
-    document.getElementById("btn2").removeEventListener('click', funcDown);
+    document.getElementById("btn1").removeEventListener('click', funcDown);
+    document.getElementById("btn2").removeEventListener('click', funcUp);
     console.log("END");
     closeGame();
     rewardCheck(true);
