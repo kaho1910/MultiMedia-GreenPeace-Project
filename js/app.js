@@ -97,7 +97,7 @@ function timer() {
         document.getElementById("timeBar").innerHTML = "Time(sec): " + time;
     }
     if (!(time % 1) && time > 0) {
-        moveCop(hx, hy, table_size, cop_sight);
+        moveCop(hx, hy, table_size, cop_sight, sight);
     }
     checkEndMain();
 }
@@ -124,14 +124,57 @@ function keyEvent(key) {
         var move = document.querySelectorAll(`[x="${cx}"]`)[cy];
         var flag = moveShip(move, energy, time, sight, hx, hy, table_size, energyMax, minigame_num);
         hx = flag[0], hy = flag[1], energy = flag[2];
+
+        window.postMessage("tutorial:1-check", "*");
     }
 }
 
 
 
 /*----------------------------------------------------------------*/
+//Tutorial
+window.addEventListener("message", tutorial, false);
+
+var tutorialCop
+
+function tutorial(event) {
+    var ship = document.querySelector(`[player="ship"]`);
+    var ship_x = ship.getAttribute("x");
+    var ship_y = ship.getAttribute("y");
+    var cop = document.querySelector(`[bot="cop"]`);
+    var cop_x = cop.getAttribute("x");
+    var cop_y = cop.getAttribute("y");
+    if (event.data == "tutorial:1-0") {
+        document.addEventListener('keydown', keyEvent, false);
+    } else if (event.data == "tutorial:1-check") {
+        window.postMessage("tutorial:2", "*");
+    } else if (event.data == "tutorial:2-check") {
+        cop_sight = 40;
+        tutorialCop = setInterval(function() {
+            moveCop(hx, hy, table_size, cop_sight, sight)
+        }, 1000);
+    } else if (event.data == "tutorial:3") {
+        clearInterval(tutorialCop);
+        clearInterval(energyPointInterval);
+        window.postMessage("tutorial:3-1", "*");
+        energy = 3;
+        document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
+    } else if (event.data == "tutorial:4-1") {
+        tutorialCop = setInterval(function() {
+            moveCop(hx, hy, table_size, cop_sight, sight)
+        }, 1000);
+    } else if (ship_x == cop_x && ship_y == cop_y) {
+        document.removeEventListener('keydown', keyEvent);
+        clearInterval(tutorialCop);
+        window.postMessage("tutorial:end", "*");
+    } else if (event.data == "backmain") {
+        window.removeEventListener("message", tutorial, false);
+    }
+}
+
+
+/*----------------------------------------------------------------*/
 //Click to Start Game
-//document.addEventListener('click', start, false);
 window.addEventListener("message", start, false);
 
 function start(event) {

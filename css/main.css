@@ -240,3 +240,58 @@ iframe {
     font-size: 27px;
     border-radius: 5px;
 }
+
+.swal-icon--success {
+    background-image: url("../img/coin.gif");
+    background-size: cover;
+    background-color: white;
+    border: none;
+    border-radius: 0%;
+}
+
+.swal-icon--success__ring {
+    /*
+    background-image: url("../img/coin.gif");
+    background-size: cover;
+    background-color: white;
+    border: none;
+    border-radius: 0%;*/
+    display: none;
+}
+
+.swal-icon--success:after,
+.swal-icon--success:before,
+.swal-icon--success__hide-corners {
+    display: none;
+}
+
+.swal-icon--success {
+    border-color: white;
+}
+
+.swal-icon--success__line {
+    background-color: white;
+    display: none;
+}
+
+.swal-icon {
+    width: 150px;
+    height: 150px;
+}
+
+.swal-icon--warning {
+    background-image: url("../img/wasd2.png");
+    background-size: cover;
+    background-color: white;
+    border: none;
+    border-radius: 0%;
+}
+
+.swal-icon--warning__body,
+.swal-icon--warning__dot {
+    display: none;
+}
+
+.swal-button--cancel {
+    color: white;
+}

@@ -1,6 +1,6 @@
 //Move Ship
 import miniGame from "./minigame randomizer.js";
-var i, j;
+var i, j, cop_check = 0;
 export default function moveShip(move, energy, time, sight, hx, hy, table_size, energyMax, minigame_num) {
     if (energy && time > 0) {
         var mx = move.getAttribute("x");
@@ -39,6 +39,10 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
                 } else {
                     //node.setAttribute("vision", '1');
                     node.style.background = "";
+                    if (document.querySelectorAll(`[x="${j}"]`)[i].getAttribute("bot") == "cop" && !cop_check) {
+                        cop_check = 1;
+                        window.postMessage("tutorial:3", "*");
+                    }
                 }
             }
         }

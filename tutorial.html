@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <title>Tutorial</title>
+    <link rel="icon" href="./img/icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="js/app.js" async></script>
+</head>
+
+<body id="body">
+    <h1 style="font-size:23;">*click on note to close</h1>
+    <ul style="top:5% ;left: -1%;">
+        <li id="note1" onclick="del(this)">
+            <a href="#">
+                <h2 style="margin-top:5px">How To</h2>
+                <p style="font-size:18; margin-top:-5px">กด WASD หรือ Arrow เพื่อเดิน <br>(ไม่กดค้าง)</p>
+                <img src="./img/wasd.png" style="position:absolute; width:110%; top:35px;left:40px;">
+                <img src="./img/arrow.png" style="position:absolute; width:55%; top:95px;left:0px;">
+            </a>
+        </li>
+        <li style="position: absolute;left:270px;" id="note2" onclick="del(this)">
+            <a href="#">
+                <h2>Your Enemy</h2>
+                <img src="./img/cop.png" style="width:20%; position: absolute; top: 30px; left: 120px;">
+                <h2 style="font-size: 21px;"><br><br>Minigame</h2>
+                <img src="./img/coin.gif" style="width:20%; position: absolute; top:95px">
+                <h2><br><br>You</h2>
+                <img src="./img/anchor.png" style="width:20%; position: absolute; top: 150px; left: 90px;">
+            </a>
+        </li>
+        <li style="position: absolute;top: 250px;" id="note3" onclick="del(this)">
+            <a href="#">
+                <h2>Objective</h2>
+                <p style="font-size:18;">เดินครอบครองพื้นที่ให้ได้มากที่สุด ก่อนจะหมดเวลา หรือโดนบุกโดยศัตรูของคุณ</p>
+            </a>
+        </li>
+        <li style="position: absolute;top: 250px; left:270px" id="note4" onclick="del(this)">
+            <a href="#">
+                <h2>Minigame</h2>
+                <p style="font-size: 18;">มินิเกมจะให้รางวัลแก่ผู้ชนะ เช่น เวลาหรือพลังงานเพิ่ม</p>
+            </a>
+        </li>
+        <li style="position: absolute;top: 500px; left:270px" id="note5" onclick="del(this)">
+            <a href="#">
+                <h2>Beware !!!</h2>
+                <p style="font-size: 18;">ศัตรูจะรู้ตำแหน่งคุณถ้าไปอยู่ตรงที่ศัตรูเคยเดิน หรือถ้าอยู่ใกล้จะรู้ตัว ระวังด้วยล่ะ</p>
+            </a>
+        </li>
+        <li style="position: absolute;top: 500px;" id="note6" onclick="del(this)">
+            <a href="#">
+                <h2>WatchOut!</h2>
+                <p style="font-size: 18; margin-top: 0px">การเดินแต่ละครั้งใช้พลังงาน ถึงพลังงานจะชาร์จเองได้ แต่ก็ระวังตอนที่ศัตรูอยู่ใกล้ๆด้วยล่ะ</p>
+            </a>
+        </li>
+    </ul>
+    <!--<img src="./img/reset.png" style="position: absolute;width: 10%; bottom: 5%; right: 5%;cursor: pointer;" onclick="window.location.reload();">
+    <a href="landing.html" style="position: absolute; top: 1%; right: -5%;">
+        <img src="/img/doc2.png" style="width:45%">
+    </a>-->
+    <div id="load"></div>
+</body>
+<script>
+    window.onload = function() {
+        document.getElementById("load").style.display = "none";
+    };
+
+    //Tutorial
+    function tutorial2check() {
+        window.postMessage("tutorial:2-check", "*");
+    }
+
+    function tutorial2(e) {
+        if (e.data == "tutorial:2") {
+            window.removeEventListener("message", tutorial2, false);
+            swal({
+                title: "great !",
+                button: ">",
+            }).then(function() {
+                swal({
+                    title: "-minigame-",
+                    text: "ลองเดินหามินิเกมเลยสิ",
+                    icon: "success",
+                    button: ">",
+                });
+            });
+        }
+    }
+
+    function tutorialRun(e) {
+        if (e.data == "tutorial:3-1") {
+            window.removeEventListener("message", tutorialRun, false);
+            swal({
+                title: "-priate-",
+                text: "หนีเร็ว !",
+                button: ">",
+            }).then(function() {
+                swal({
+                    title: "-emergency-",
+                    text: "เกิดเหตุขัดข้อง พลังงานของเรือรั่ว\nและไม่สามารถเติมพลังงานได้",
+                    button: "ok",
+                }).then(function() {
+                    window.postMessage("tutorial:4-1", "*");
+                });
+            });
+        } else if (e.data == "tutorial:end") {
+            swal({
+                title: "end tutorial",
+                button: "finish",
+            }).then(function() {
+                //window.postMessage("backmain", "*");
+                window.location.href = "index.html";
+            });
+        }
+    }
+
+    //start tutorial
+    swal({
+        title: "tutorial",
+        text: "welcome to tutorial",
+        button: ">",
+    }).then(function() {
+        swal({
+            title: "-move-",
+            text: "กด W,A,S,D หรือ Arrow Key เพื่อเดิน\n(แค่เดินผ่าน ก็ถือว่ายึดครองพื้นที่แล้ว)",
+            button: "try",
+            icon: "warning",
+        }).then(function() {
+            window.postMessage("tutorial:1-0", "*");
+            window.addEventListener("message", tutorial2, false);
+        }).then(function() {
+            window.addEventListener("message", tutorialRun, false);
+        });
+    });
+
+    function readAll(event) {
+        var data = event.data;
+        if (data == "end:win") {
+            end(2);
+            window.removeEventListener("message", readAll, false);
+        } else if (data == "end:time") {
+            end(1);
+            window.removeEventListener("message", readAll, false);
+        } else if (data == "end:cop") {
+            end(0);
+            window.removeEventListener("message", readAll, false);
+        } else if (data == "reward:none") {
+            swal("You Lost : no reward lol").then(tutorial2check);
+        } else if (data == "reward:energy") {
+            swal("energy += 10").then(tutorial2check);
+        } else if (data == "reward:time") {
+            swal("time += 30").then(tutorial2check);
+        } else if (data == "reward:areabomb") {
+            swal("ยึดครองพื้นที่รอบๆตัว").then(tutorial2check);
+        } else if (data == "reward:energymax") {
+            swal("energy limit += 5").then(tutorial2check);
+        } else if (data == "reward:sight") {
+            swal("vision range += 1").then(tutorial2check);
+        }
+    }
+    window.addEventListener("message", readAll, false);
+
+    function del(me) {
+        var run = document.getElementById(me.getAttribute("id"));
+        run.style.visibility = "hidden";
+    }
+</script>
+
+</html>
