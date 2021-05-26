@@ -236,7 +236,7 @@ iframe {
 
 .swal-button {
     font-family: "PixelSplitter", sans-serif;
-    background-color: DodgerBlue;
+    background-color: deepSkyBlue;
     font-size: 27px;
     border-radius: 5px;
 }
@@ -294,4 +294,12 @@ iframe {
 
 .swal-button--cancel {
     color: white;
+}
+
+.swal-button:not([disabled]):hover {
+    background: MediumSeaGreen;
+}
+
+.swal-button--cancel:not([disabled]):hover {
+    background: GoldenRod;
 }
