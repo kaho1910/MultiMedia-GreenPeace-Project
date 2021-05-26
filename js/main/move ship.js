@@ -25,6 +25,7 @@ export default function moveShip(move, energy, time, sight, hx, hy, table_size, 
 
         if (step_bonus) {
             console.log("bonus");
+            window.postMessage("keydown-remove", "*");
             miniGame(minigame_num);
         }
 

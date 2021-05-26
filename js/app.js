@@ -195,10 +195,21 @@ function start(event) {
 
 
 /*----------------------------------------------------------------*/
+//Remove keydown function
+function reKeydown(event) {
+    if (event.data == "keydown-remove") {
+        document.removeEventListener('keydown', keyEvent, false);
+    }
+}
+document.addEventListener('keydown', reKeydown, false);
+
+
+/*----------------------------------------------------------------*/
 //Closing Minigame
 function endMessage(event) {
     var element = document.getElementById("minigame");
     if (event.data == "removetheiframe" && element != null) {
+        document.addEventListener('keydown', keyEvent, false);
         element.parentNode.removeChild(element);
     }
 }
