@@ -69,7 +69,15 @@
 
     //Tutorial
     function tutorial2check() {
-        window.postMessage("tutorial:2-check", "*");
+        swal({
+            title: "-reward-",
+            text: "มินิเกมมีรางวัลที่หลากหลายรออยู่\nเช่นพลังงาน หรือเวลา เป็นต้น",
+            icon: "success",
+            button: "ok",
+        }).then(function() {
+            window.postMessage("tutorial:2-check", "*");
+        });
+
     }
 
     function tutorial2(e) {
