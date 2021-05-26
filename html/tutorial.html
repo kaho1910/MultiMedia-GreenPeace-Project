@@ -82,16 +82,20 @@
         }
     }
 
+    var check2 = 1
+
     function tutorial2check() {
-        window.removeEventListener("message", tutorial2check, false);
-        swal({
-            title: "-reward-",
-            text: "มินิเกมมีรางวัลที่หลากหลายรออยู่\nเช่นพลังงาน หรือเวลา เป็นต้น",
-            icon: "success",
-            button: "ok",
-        }).then(function() {
-            window.postMessage("tutorial:2-check", "*");
-        });
+        if (check2) {
+            check2 = 0;
+            swal({
+                title: "-reward-",
+                text: "มินิเกมมีรางวัลที่หลากหลายรออยู่\nเช่นพลังงาน หรือเวลา เป็นต้น",
+                icon: "success",
+                button: "ok",
+            }).then(function() {
+                window.postMessage("tutorial:2-check", "*");
+            });
+        }
     }
 
     function tutorialRun(e) {
