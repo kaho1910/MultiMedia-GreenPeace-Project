@@ -10,6 +10,9 @@ export default function moveCop(hx, hy, table_size, cop_sight, sight) {
         cop_check = 1;
         window.postMessage("tutorial:3", "*");
     }
+    if ((hx == cx) && (hy == cy)) {
+        window.postMessage("tutorial:bust", "*");
+    }
     if (ship.getAttribute("bot") == "cop_walked" || (Math.abs(hx - cx) + Math.abs(hy - cy) < cop_sight)) {
         //when ship step on cop_tile
         //or in range of cop vision

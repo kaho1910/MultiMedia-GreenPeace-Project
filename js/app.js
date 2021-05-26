@@ -157,24 +157,15 @@ function tutorial(event) {
         tutorialCopCont = setInterval(function() {
             moveCop(hx, hy, table_size, cop_sight, sight)
         }, 1000);
-    }
-    var ship = document.querySelector(`[player="ship"]`);
-    var ship_x = ship.getAttribute("x");
-    var ship_y = ship.getAttribute("y");
-    //alert(ship_x + " : " + ship_y + "\n" + cop_x + " : " + cop_y);
-    var cop = document.querySelector(`[bot="cop"]`);
-    var cop_x = cop.getAttribute("x");
-    var cop_y = cop.getAttribute("y");
-    //alert(cop_x + " : " + cop_y);
-    console.log(ship_x == cop_x && ship_y == cop_y);
-    if (document.querySelector("[player='ship']").getAttribute("bot") == "cop") {
-        alert("check ship+cop");
+    } else if (event.data == "tutorial:bust") {
         document.removeEventListener('keydown', keyEvent);
         clearInterval(tutorialCopCont);
         window.postMessage("tutorial:end", "*");
-    } else if (event.data == "backmain") {
-        window.removeEventListener("message", tutorial, false);
     }
+    /*else if (event.data == "backmain") {
+           window.removeEventListener("message", tutorial, false);
+       }
+    */
 }
 
 
