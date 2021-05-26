@@ -100,6 +100,7 @@
 
     function tutorialRun(e) {
         if (e.data == "tutorial:3-1") {
+            window.postMessage("removetheiframe", "*");
             swal({
                 title: "-pirate-",
                 text: "หนีเร็ว !",
