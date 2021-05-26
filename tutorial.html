@@ -132,9 +132,10 @@
         text: "welcome to tutorial",
         button: ">",
     }).then(function() {
+        window.postMessage("tutorial:start", "*");
         swal({
             title: "-move-",
-            text: "กด W,A,S,D หรือ Arrow Key เพื่อเดิน\n",
+            text: "กด W,A,S,D หรือ Arrow Key เพื่อเดิน",
             button: "try",
             icon: "warning",
         }).then(function() {

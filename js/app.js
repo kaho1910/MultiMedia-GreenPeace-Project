@@ -137,37 +137,45 @@ window.addEventListener("message", tutorial, false);
 
 var tutorialCop, tutorialCopCont;
 var tutor3 = 1;
+var tutorial_check = 0
 
 function tutorial(event) {
-    if (event.data == "tutorial:1-0") {
-        document.addEventListener('keydown', keyEvent, false);
-    } else if (event.data == "tutorial:1-check") {
-        window.postMessage("tutorial:2", "*");
-    } else if (event.data == "tutorial:2-check") {
-        cop_sight = 60;
-        tutorialCop = setInterval(function() {
-            moveCop(hx, hy, table_size, cop_sight, sight)
-        }, 1000);
-    } else if (event.data == "tutorial:3" && tutor3) {
-        clearInterval(tutorialCop);
-        clearInterval(energyPointInterval);
-        window.postMessage("tutorial:3-1", "*");
-        tutor3 = 0;
-        energy = 0;
-        document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
-    } else if (event.data == "tutorial:4-1") {
-        tutorialCopCont = setInterval(function() {
-            moveCop(hx, hy, table_size, cop_sight, sight)
-        }, 1000);
-    } else if (event.data == "tutorial:bust") {
-        document.removeEventListener('keydown', keyEvent);
-        clearInterval(tutorialCopCont);
-        window.postMessage("tutorial:end", "*");
+    console.log("check");
+    if (event.data == "tutorial:start" && !tutorial_check) {
+        console.log("check tutorial");
+        tutorial_check = 1;
     }
-    /*else if (event.data == "backmain") {
-           window.removeEventListener("message", tutorial, false);
-       }
-    */
+    if (tutorial_check) {
+        if (event.data == "tutorial:1-0") {
+            document.addEventListener('keydown', keyEvent, false);
+        } else if (event.data == "tutorial:1-check") {
+            window.postMessage("tutorial:2", "*");
+        } else if (event.data == "tutorial:2-check") {
+            cop_sight = 60;
+            tutorialCop = setInterval(function() {
+                moveCop(hx, hy, table_size, cop_sight, sight)
+            }, 1000);
+        } else if (event.data == "tutorial:3" && tutor3) {
+            clearInterval(tutorialCop);
+            clearInterval(energyPointInterval);
+            window.postMessage("tutorial:3-1", "*");
+            tutor3 = 0;
+            energy = 0;
+            document.getElementById("energyBar").innerHTML = "Energy: " + energy + " / " + energyMax;
+        } else if (event.data == "tutorial:4-1") {
+            tutorialCopCont = setInterval(function() {
+                moveCop(hx, hy, table_size, cop_sight, sight)
+            }, 1000);
+        } else if (event.data == "tutorial:bust") {
+            document.removeEventListener('keydown', keyEvent);
+            clearInterval(tutorialCopCont);
+            window.postMessage("tutorial:end", "*");
+        }
+        /*else if (event.data == "backmain") {
+               window.removeEventListener("message", tutorial, false);
+           }
+        */
+    }
 }
 
 
