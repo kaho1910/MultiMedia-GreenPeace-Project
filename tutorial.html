@@ -87,6 +87,7 @@
     }
 
     function tutorial2check() {
+        window.removeEventListener("message", tutorial2check, false);
         swal({
             title: "-reward-",
             text: "มินิเกมมีรางวัลที่หลากหลายรออยู่\nเช่นพลังงาน หรือเวลา เป็นต้น",
