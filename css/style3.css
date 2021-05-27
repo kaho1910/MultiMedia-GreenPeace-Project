@@ -34,7 +34,7 @@ body{
     width: 100%;
     height: 45%;
     top:5%;
-    background-image: url(https://imgur.com/l1nZ6te.png);
+    background-image: url(../img/img30/35.png);
     background-size: cover;
     background-position: center ;
 }
@@ -43,7 +43,7 @@ body{
     width: 100%;
     height: 50%;
     top: 50%;
-    background-image: url(https://imgur.com/uzs7kPG.png);
+    background-image: url(../img/img30/36.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -97,7 +97,7 @@ body{
     left: -4%;
     position: absolute;
     transform: scale(1.02);
-    background-image: url(https://imgur.com/uGdUgWZ.png);
+    background-image: url(../img/img30/37.png);
     background-size: cover;
 }
 .part2{
@@ -106,17 +106,14 @@ body{
     position: absolute;
     bottom: 0;
     background: linear-gradient(#145dd5,#377ff7);
-    /* background-image: url(https://imgur.com/xY7smNj.png); */
     background-size: cover;
-    /* background-image: url(https://media.discordapp.net/attachments/787691312186916874/845543487621038090/image0.png?width=1191&height=670);
-    background-position: right; */
 
 }
 .part{
     width: 100%;
     height: 55%;
     position: absolute;
-    background-image: url(https://imgur.com/rO5IWuq.png);
+    background-image: url(../img/img30/38.png);
     background-size: cover;
 }
 .pic2{
@@ -128,7 +125,7 @@ body{
     right: -10%;
     position: absolute;
     transform: scale(1.02);
-    background-image: url(https://imgur.com/H1Idpsk.png);
+    background-image: url(../img/img30/39.png);
     background-size: cover;
 }
 .pramong, .koodmine{
@@ -162,7 +159,7 @@ body{
     background-color: #59a5e4;
     width: 100%;
     height: 85vw;
-    background-image: url(https://imgur.com/SUGJsev.png);
+    background-image: url(../img/img30/40.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
@@ -244,7 +241,7 @@ i{
     height: 77.5vw;
     background-color: #fff9dd;
     overflow: hidden;
-    background-image: url(https://imgur.com/qn4NZDT.png);
+    background-image: url(../img/img30/41.png);
     background-size: 100% 65%;
     background-repeat: no-repeat;
 }
@@ -524,7 +521,7 @@ i{
     height: 70%;
     background-size: cover;
     top: -25%;
-    background-image: url(https://imgur.com/ZXgyHTW.png);
+    background-image: url(../img/img30/42.png);
     background-position: right;
     transition: 1.5s;
 }
@@ -551,12 +548,13 @@ i{
   .plan{
     font-family: 'Mitr', sans-serif;
     color: white;
-    font-size: 2vw;
+    font-size: 1.9vw;
     position: absolute;
-    top: 8%;
-    left: 19%;
-    text-indent: 9vw;
+    top: 12%;
+    left: 29.25%;
+    text-indent: 0vw;
     line-height: 200%;
+    opacity: 0;
 }
 
 #bright{
@@ -625,3 +623,7 @@ button:focus {
   .button4{
       left: 52.5%;
   }
+#fifth2{
+    width: 100%;
+    height: 70vw;
+}
